@@ -7,6 +7,7 @@ from pydantic import BaseModel
 import base64
 
 app=FastAPI()
+
 class ImageData(BaseModel):
     image: str
 

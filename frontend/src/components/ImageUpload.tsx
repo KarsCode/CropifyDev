@@ -1,7 +1,9 @@
 import React, { useState, ChangeEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ImageUpload: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const navigate = useNavigate();
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -14,7 +16,7 @@ const ImageUpload: React.FC = () => {
       const base64Data = await convertFileToBase64(selectedFile);
       if (base64Data) {
         try {
-          const response = await fetch('http://localhost:5555/upload', {
+          const response = await fetch('http://localhost:5555/plantDisease/upload', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ base64Data : base64Data }),
@@ -22,12 +24,18 @@ const ImageUpload: React.FC = () => {
 
           if (response.ok) {
             console.log('Image uploaded successfully');
+            const responseData = await response.json();
+            const imageId = responseData.id;
+            console.log(`going to ${imageId}`)
+            navigate(`/plantDisease/${imageId}`);
+            
           } else {
             console.error('Failed to upload image');
           }
         } catch (error) {
           console.error('Error uploading image:', error);
         }
+
       }
     }
   };
