@@ -1,12 +1,20 @@
 // import Header from "./Header";
 import {Outlet} from "react-router-dom";
-
+import Navbar from "./components/Navbar/Navbar"
+import Footer from "./components/Footer/footer"
+import './global.css'
+import { ThemeProvider } from "./components/theme-provider";
+import { Toaster } from "./components/ui/toaster";
 export default function Layout() {
   return (
-    
-    <div className="py-4 px-8 flex flex-col min-h-screen max-w-4xl mx-auto">
-      {/* <Header /> */}
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <div className="layoutfinal" >
+      <Navbar/>
       <Outlet />
+      <Footer/>
+      
     </div>
+    <Toaster/>
+    </ThemeProvider>
   );
 }
