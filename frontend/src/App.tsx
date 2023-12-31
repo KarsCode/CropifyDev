@@ -1,13 +1,12 @@
 import './global.css'
 import {Route, Routes} from "react-router-dom";
-// import IndexPage from './pages/IndexPage';
 import PlantDisease from './pages/PlantDisease';
 import Layout from './Layout';
 import Home from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
-import PlantDiseases from './pages/PlantDiseases';
 import SoilType from './pages/SoilType';
-import SoilTypes from './pages/SoilTypes';
+import SoilCheck from './pages/SoilCheck';
+import CropDoctor from './pages/CropDoctor';
 
 function App() {
 
@@ -16,8 +15,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home />} />
-        <Route path="/CropDoctor" element={<div>CropDoctor</div>} />
-        <Route path="/SoilCheck" element={<div>SoilCheck</div>} />
+        <Route path="/CropDoctor" element={<CropDoctor/>} />
+        <Route path="/SoilCheck" element={<SoilCheck/>} />
         <Route path="/Blog" element={<div>Blog</div>} />
         <Route path="/Contact" element={<ContactPage/>} />
         <Route path="/Profile" element={<div>Profile</div>} />

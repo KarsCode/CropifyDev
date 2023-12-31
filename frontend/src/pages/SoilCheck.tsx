@@ -1,6 +1,6 @@
 import ImageProcessing from "../components/ImageProcessing";
 
-export default function SoilTypes(){
+export default function SoilCheck(){
     return(
 
       <ImageProcessing endpoint="soilType"/>
