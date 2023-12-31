@@ -27,7 +27,7 @@ export default function PlantDisease() {
   }, [id]);
 
   // Render loading state if data is still fetching
-  if (!data || !data["document"]) {
+if (!data || !data["document"]) {
     return <p>Loading...</p>;
   }
 

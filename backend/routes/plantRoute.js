@@ -1,5 +1,7 @@
 import express from "express";
 
+import { MongoClient } from 'mongodb';
+
 const router = express.Router();
 
 router.post('/upload', async (req, res) => {
@@ -25,6 +27,22 @@ router.post('/upload', async (req, res) => {
     } catch (error) {
       console.error('Error processing image:', error);
     }
+});
+
+router.get('/:diseaseId', (req, res) => {
+  const soilId = req.params.diseaseId;
+  const uri = process.env.DATABASE_URL;
+  const handleFetch = async () => {
+      const client = new MongoClient(uri);
+        await client.connect();
+        const database = client.db('Cropify');
+        const collection = database.collection('PlantDisease');
+        const numericSoilId = parseInt(soilId, 10);
+        const foundDocument = await collection.findOne({ diseaseId: numericSoilId });
+        res.json({ document: foundDocument });
+
+    }
+    handleFetch();
 });
 
 

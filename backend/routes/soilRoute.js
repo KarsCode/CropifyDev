@@ -1,5 +1,7 @@
 import express from "express";
 
+import { MongoClient } from 'mongodb';
+
 const router = express.Router();
 
 router.post('/upload', async (req, res) => {
@@ -27,6 +29,20 @@ router.post('/upload', async (req, res) => {
     }
 });
 
+router.get('/:soilId', (req, res) => {
+  const soilId = req.params.soilId;
+  const uri = process.env.DATABASE_URL;
+  const handleFetch = async () => {
+      const client = new MongoClient(uri);
+        await client.connect();
+        const database = client.db('Cropify');
+        const collection = database.collection('SoilType');
+        const numericSoilId = parseInt(soilId, 10);
+        const foundDocument = await collection.findOne({ soilId: numericSoilId });
+        res.json({ document: foundDocument });
 
+    }
+    handleFetch();
+});
 
 export default router;
