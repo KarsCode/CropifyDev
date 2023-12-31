@@ -4,15 +4,15 @@ const router = express.Router();
 
 router.post('/upload', async (req, res) => {
     try {
-      const { base64Data } = req.body;
-      // Send the base64Data to the FastAPI endpoint
+      const { image } = req.body;
+      // Send the image(base64) to the FastAPI endpoint
       const fastAPIEndpoint = 'http://localhost:8000/plantDisease'; // Update with your actual FastAPI endpoint
       const response = await fetch(fastAPIEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ image : base64Data }),
+        body: JSON.stringify({ image : image }),
       });
   
       if (response.ok) {

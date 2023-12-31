@@ -1,7 +1,12 @@
 import React, { useState, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { VITE_API_URL} from '../setupEnv.tsx'; // Use this line wh
 
-const ImageUpload: React.FC = () => {
+interface ImageProcessingProps {
+  endpoint: string; // Prop to determine the dynamic part of the URL
+}
+
+const ImageProcessing: React.FC<ImageProcessingProps> = ({ endpoint }) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const navigate = useNavigate();
 
@@ -10,32 +15,28 @@ const ImageUpload: React.FC = () => {
       setSelectedFile(e.target.files[0]);
     }
   };
-
-  const handleUpload = async () => {
+// change the handle upload fucntion to do what you want with the base64 data
+  const handleUpload = async () => { 
     if (selectedFile) {
       const base64Data = await convertFileToBase64(selectedFile);
       if (base64Data) {
         try {
-          const response = await fetch('http://localhost:5555/plantDisease/upload', {
+          const response = await fetch(`${VITE_API_URL}/${endpoint}/upload`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ base64Data : base64Data }),
+            body: JSON.stringify({ image: base64Data }),
           });
 
           if (response.ok) {
-            console.log('Image uploaded successfully');
             const responseData = await response.json();
             const imageId = responseData.id;
-            console.log(`going to ${imageId}`)
-            navigate(`/plantDisease/${imageId}`);
-            
+            navigate(`/${endpoint}/${imageId}`);
           } else {
             console.error('Failed to upload image');
           }
         } catch (error) {
           console.error('Error uploading image:', error);
         }
-
       }
     }
   };
@@ -55,4 +56,4 @@ const ImageUpload: React.FC = () => {
   );
 };
 
-export default ImageUpload;
+export default ImageProcessing;
