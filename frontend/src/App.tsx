@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage';
 import SoilType from './pages/SoilType';
 import SoilCheck from './pages/SoilCheck';
 import CropDoctor from './pages/CropDoctor';
+import Dashboard from './pages/Dashboard';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Profile" element={<div>Profile</div>} />
         <Route path="/plantDisease/:id" element={<PlantDisease/>} />
         <Route path="/soilType/:id" element={<SoilType/>} />
+        <Route path="/Dashboard" element={<Dashboard/>}/>
       </Route>
     </Routes>
     
