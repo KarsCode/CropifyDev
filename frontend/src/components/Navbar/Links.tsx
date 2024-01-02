@@ -19,16 +19,16 @@ const links = [
     path: "/Blog",
   },
   {
-    title: "Dashboard",
-    path: "/Dashboard",
-  },
-  {
     title: "Contact",
     path: "/Contact",
   },
   {
     title: "Profile",
     path: "/Profile",
+  },
+  {
+    title: "Dashboard",
+    path: "/Dashboard",
   },
 ];
 
