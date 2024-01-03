@@ -100,13 +100,50 @@ export default function Dashboard (){
     { x: 420, y: 280, z: 200 },
   ];
 
-
+  const datar = [
+    {
+      subject: 'Math',
+      A: 120,
+      B: 110,
+      fullMark: 150,
+    },
+    {
+      subject: 'Chinese',
+      A: 98,
+      B: 130,
+      fullMark: 150,
+    },
+    {
+      subject: 'English',
+      A: 86,
+      B: 130,
+      fullMark: 150,
+    },
+    {
+      subject: 'Geography',
+      A: 99,
+      B: 100,
+      fullMark: 150,
+    },
+    {
+      subject: 'Physics',
+      A: 85,
+      B: 90,
+      fullMark: 150,
+    },
+    {
+      subject: 'History',
+      A: 65,
+      B: 85,
+      fullMark: 150,
+    },
+  ];
 return(
   <div className="h-screen py-0 flex flex-col">
       <div className="flex-1 flex flex-row">
         {/* Upper Left */}
         <div className="flex-1 flex items-center justify-center">
-        <AreaChart width={630} height={350} data={data}
+        <AreaChart width={630} height={300} data={data}
   margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
   <defs>
     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -130,7 +167,7 @@ return(
         {/* Upper Right */}
         <div className="flex-1 flex items-center justify-center">
         <ResponsiveContainer width="100%" height="100%">
-        <PieChart width={400} height={400}>
+        <PieChart width={400} height={200}>
           <Pie data={data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#8884d8" />
           <Pie data={data02} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#82ca9d" label />
         </PieChart>
@@ -141,31 +178,13 @@ return(
       <div className="flex-1 flex flex-row">
         {/* Lower Left */}
         <div className="flex-1 flex items-center justify-center">
-        <ResponsiveContainer width="100%" height={400}>
-        <ScatterChart
-          margin={{
-            top: 20,
-            right: 20,
-            bottom: 20,
-            left: 20,
-          }}
-        >
-          <CartesianGrid />
-          <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-          <YAxis yAxisId="left" type="number" dataKey="y" name="weight" unit="kg" stroke="#8884d8" />
-          <YAxis
-            yAxisId="right"
-            type="number"
-            dataKey="y"
-            name="weight"
-            unit="kg"
-            orientation="right"
-            stroke="#82ca9d"
-          />
-          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter yAxisId="left" name="A school" data={data001} fill="#8884d8" />
-          <Scatter yAxisId="right" name="A school" data={data002} fill="#82ca9d" />
-        </ScatterChart>
+        <ResponsiveContainer width="100%" height="100%">
+        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={datar}>
+          <PolarGrid />
+          <PolarAngleAxis dataKey="subject" />
+          <PolarRadiusAxis />
+          <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        </RadarChart>
       </ResponsiveContainer>
         </div>
         
@@ -174,7 +193,7 @@ return(
         <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
-          height={300}
+          height={200}
           data={data}
           margin={{
             top: 5,
