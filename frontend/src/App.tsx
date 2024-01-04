@@ -16,6 +16,7 @@ import SingleBlogPost from './pages/SingleBlogPost';
 function App() {
 
   return (
+   <div>
     
     <Routes>
       <Route path="/" element={<Layout/>}>
@@ -32,6 +33,7 @@ function App() {
         <Route path="/register" element={<RegisterPage/>} />
       </Route>
     </Routes>
+    </div>
     
     
   )

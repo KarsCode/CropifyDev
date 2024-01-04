@@ -1,3 +1,4 @@
+import { DrawerDemo } from "../components/DrawerSoilMap/Drawer";
 import ImageProcessing from "../components/ImageProcessing";
 
 export default function CropDoctor(){
@@ -35,10 +36,9 @@ Cultivating Wealth From the Ground Up.</h2>
           <div>
             
             
-          {/* <div className="inline-block px-4 py-2 text-2xl rounded-full border border-ring hover:bg-crophover duration-300 ease-in-out">
-            <HomeDialog/> 
-  
-          </div> */}
+          <div className="hidden lg:block md:block">
+            <DrawerDemo/>
+          </div>
           
           </div>
         </div>

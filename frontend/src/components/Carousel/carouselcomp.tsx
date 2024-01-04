@@ -21,7 +21,7 @@ const CarouselComp = () => {
             <CarouselItem key={index}>
               <div className="p-1">
                 <Card>
-                  <CardContent className="flex aspect-video items-center justify-center p-6">
+                  <CardContent className="flex aspect-video items-center justify-center p-6 bg-background">
                     {/* Use standard HTML img element */}
                     <img src={path} alt={`Image ${index + 1}`} width={500} height={100} />
                   </CardContent>

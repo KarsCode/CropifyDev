@@ -5,9 +5,9 @@ import { ModeToggle } from './ModeToggle';
 const Navbar = () => {
   return (
     <div className='flex h-24 items-center justify-between border-b-2 border-ring'>
-      <div className='pt-4'>
+      <div>
         <a href="/">
-          <img src={'./Screenshot_2023-12-24_142750-removebg-preview.png'} alt='Cropify' width={300} height={40} />
+          <img src={'./final_logo.png'} alt='Cropify' width={300} height={40} />
         </a>
       </div>
 

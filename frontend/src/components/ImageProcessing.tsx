@@ -59,7 +59,7 @@ const ImageProcessing: React.FC<ImageProcessingProps> = ({ endpoint }) => {
 
       <div className='flex flex-col gap-2'>
       <Label htmlFor="picture">Picture</Label>
-      <Input id="picture" type="file" onChange={handleFileChange} />
+      <Input id="picture" type="file" onChange={handleFileChange} className='border-2' />
       </div>
       {/* <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload Image</button> */}  
