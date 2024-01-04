@@ -7,6 +7,8 @@ import ContactPage from './pages/ContactPage';
 import SoilType from './pages/SoilType';
 import SoilCheck from './pages/SoilCheck';
 import CropDoctor from './pages/CropDoctor';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/Profile" element={<div>Profile</div>} />
         <Route path="/plantDisease/:id" element={<PlantDisease/>} />
         <Route path="/soilType/:id" element={<SoilType/>} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/register" element={<RegisterPage/>} />
       </Route>
     </Routes>
     
