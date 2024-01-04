@@ -11,12 +11,13 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import BlogPage from './pages/BlogPage';
 import SingleBlogPost from './pages/SingleBlogPost';
+import { UserContextProvider } from './UserContext';
 
 
 function App() {
 
   return (
-    
+    <UserContextProvider>
     <Routes>
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home />} />
@@ -32,6 +33,7 @@ function App() {
         <Route path="/register" element={<RegisterPage/>} />
       </Route>
     </Routes>
+    </UserContextProvider>
     
     
   )
