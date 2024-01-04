@@ -18,8 +18,8 @@
     
     margin: auto;
     width: 100% ;
-    padding-left: 250px;
-    padding-right: 250px;
+    padding-left: 150px;
+    padding-right: 150px;
     padding-top: 8px; 
     min-height: 100vh; 
     display: flex;
@@ -69,10 +69,16 @@
       width: 380px;
     }
   }
+
+  /* @media (max-width: 380px) {
+    .layoutfinal {
+      width: 200px;
+    }
+  } */
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 31 63% 95%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
