@@ -4,6 +4,16 @@ import { useState } from "react";
 import NavLink from './NavLink'
 
 import { RiMenuAddLine } from "react-icons/ri";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
+
+
+
+
+
+
+
+
 
 const links = [
   {
@@ -28,8 +38,22 @@ const links = [
   },
 ];
 
+
+
+
 const Links = () => {
   const [open, setOpen] = useState(false);
+
+// logout func begins
+  const [redirect,setRedirect]=useState('');
+  async function logout(){
+    await axios.post('/logout');
+    setRedirect('/');
+  }
+  if(redirect!=''){
+    return <Navigate to={redirect}/>
+  }
+// logout func ends
 
   return (
     <div>
