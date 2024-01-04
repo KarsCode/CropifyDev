@@ -10,7 +10,7 @@ const PostCard = () => {
                 <img src="./BlogDemo.jpeg" style={{ objectFit: 'cover'}}/>
         </div>
         {/* Date */}
-        <div className='font-extralight rotate-[270deg] m-auto'>01.01.2024</div>
+        <div className='font-extralight rotate-[90deg] m-auto'>01.01.2024</div>
 
 
       </div>

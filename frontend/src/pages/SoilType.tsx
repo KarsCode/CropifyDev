@@ -1,6 +1,9 @@
 import { useParams } from "react-router-dom";
 import { VITE_API_URL } from "../setupEnv";
 import { useEffect, useState } from "react";
+import { ReloadIcon } from "@radix-ui/react-icons"
+ 
+import { Button } from "../components/ui/button"
 
 export default function SoilType() {
   const { id } = useParams();
@@ -28,7 +31,12 @@ export default function SoilType() {
 
   // Render loading state if data is still fetching
 if (!data || !data["document"]) {
-    return <p>Loading...</p>;
+    return (
+      <Button disabled>
+      <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+      Please wait
+    </Button>
+    )
   }
 
   console.log(data);
