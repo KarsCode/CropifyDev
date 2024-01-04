@@ -1,6 +1,10 @@
 import React, { useState, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { VITE_API_URL} from '../setupEnv.tsx'; // Use this line wh
+import { VITE_API_URL} from '../setupEnv.tsx';
+
+import { Input } from "../components/ui/input"
+import { Label } from "../components/ui/label"// Use this line wh
+import { Button } from './ui/button.tsx';
 
 interface ImageProcessingProps {
   endpoint: string; // Prop to determine the dynamic part of the URL
@@ -11,8 +15,10 @@ const ImageProcessing: React.FC<ImageProcessingProps> = ({ endpoint }) => {
   const navigate = useNavigate();
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log("Test");
     if (e.target.files && e.target.files.length > 0) {
       setSelectedFile(e.target.files[0]);
+      console.log(e.target.files[0])
     }
   };
 // change the handle upload fucntion to do what you want with the base64 data
@@ -49,9 +55,17 @@ const ImageProcessing: React.FC<ImageProcessingProps> = ({ endpoint }) => {
     });
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload Image</button>
+    <div className='flex flex-col gap-12'>
+
+      <div className='flex flex-col gap-2'>
+      <Label htmlFor="picture">Picture</Label>
+      <Input id="picture" type="file" onChange={handleFileChange} />
+      </div>
+      {/* <input type="file" onChange={handleFileChange} />
+      <button onClick={handleUpload}>Upload Image</button> */}  
+      {/* ugly as hell  */}
+
+      <Button  onClick={handleUpload}> Upload Image </Button>
     </div>
   );
 };

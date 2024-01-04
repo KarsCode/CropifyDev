@@ -21,6 +21,7 @@ export default function Home() {
         <p className='text-lg'>
         Cropify is the future of farming at your fingertips. Using advanced machine learning, we detect plant diseases early, ensuring your crops thrive. Know your soil with our insights, guiding you to the right crops for maximum yield. Cropify isn't just a website; it's a revolution, cultivating tomorrow's harvest today. Smart, precise, and sustainable. Welcome to the future of agriculture.
         </p>
+        
 
         <p className='text-lg'>
           Click below to learn more about the team behind the project !

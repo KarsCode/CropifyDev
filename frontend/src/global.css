@@ -70,10 +70,16 @@
       width: 380px;
     }
   }
+
+  /* @media (max-width: 380px) {
+    .layoutfinal {
+      width: 200px;
+    }
+  } */
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 31 63% 95%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
