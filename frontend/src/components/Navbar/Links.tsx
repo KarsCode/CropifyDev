@@ -4,6 +4,16 @@ import { useState } from "react";
 import NavLink from './NavLink'
 
 import { RiMenuAddLine } from "react-icons/ri";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
+
+
+
+
+
+
+
+
 
 const links = [
   {
@@ -26,14 +36,32 @@ const links = [
     title: "Profile",
     path: "/Profile",
   },
+  {
+    title: "Dashboard",
+    path: "/Dashboard",
+  },
 ];
+
+
+
 
 const Links = () => {
   const [open, setOpen] = useState(false);
 
+// logout func begins
+  const [redirect,setRedirect]=useState('');
+  async function logout(){
+    await axios.post('/logout');
+    setRedirect('/');
+  }
+  if(redirect!=''){
+    return <Navigate to={redirect}/>
+  }
+// logout func ends
+
   return (
     <div>
-      <div className='hidden lg:flex justify-between gap-20 text-xl'>
+      <div className='hidden lg:flex justify-between gap-10 text-xl'>
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
         ))}

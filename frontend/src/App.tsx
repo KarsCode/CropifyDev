@@ -7,17 +7,18 @@ import ContactPage from './pages/ContactPage';
 import SoilType from './pages/SoilType';
 import SoilCheck from './pages/SoilCheck';
 import CropDoctor from './pages/CropDoctor';
+import Dashboard from './pages/Dashboard';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import BlogPage from './pages/BlogPage';
 import SingleBlogPost from './pages/SingleBlogPost';
+import { UserContextProvider } from './UserContext';
 
 
 function App() {
-
   return (
    <div>
-    
+    <UserContextProvider>
     <Routes>
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home />} />
@@ -29,11 +30,13 @@ function App() {
         <Route path="/Profile" element={<div>Profile</div>} />
         <Route path="/plantDisease/:id" element={<PlantDisease/>} />
         <Route path="/soilType/:id" element={<SoilType/>} />
+        <Route path="/Dashboard" element={<Dashboard/>}/>
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/register" element={<RegisterPage/>} />
       </Route>
     </Routes>
-    </div>
+    </UserContextProvider>
+  </div>
     
     
   )
