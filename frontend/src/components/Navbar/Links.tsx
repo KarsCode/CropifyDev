@@ -36,6 +36,10 @@ const links = [
     title: "Profile",
     path: "/Profile",
   },
+  {
+    title: "Dashboard",
+    path: "/Dashboard",
+  },
 ];
 
 
@@ -57,7 +61,7 @@ const Links = () => {
 
   return (
     <div>
-      <div className='hidden lg:flex justify-between gap-20 text-xl'>
+      <div className='hidden lg:flex justify-between gap-10 text-xl'>
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
         ))}
