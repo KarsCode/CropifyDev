@@ -21,6 +21,7 @@ const config: Config = {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         crophover: 'hsl(var(--crophover))',
+        lbg: 'hsl(var(--lbg))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {

@@ -8,9 +8,9 @@ import SoilType from './pages/SoilType';
 import SoilCheck from './pages/SoilCheck';
 import CropDoctor from './pages/CropDoctor';
 import Dashboard from './pages/Dashboard';
+import LoginPage from './pages/Login';
 
 function App() {
-
   return (
     
     <Routes>
@@ -24,6 +24,7 @@ function App() {
         <Route path="/plantDisease/:id" element={<PlantDisease/>} />
         <Route path="/soilType/:id" element={<SoilType/>} />
         <Route path="/Dashboard" element={<Dashboard/>}/>
+        <Route path="/Login" element={<LoginPage/>}/>
       </Route>
     </Routes>
     

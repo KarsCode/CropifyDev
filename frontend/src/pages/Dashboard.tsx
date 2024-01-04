@@ -143,6 +143,7 @@ return(
       <div className="flex-1 flex flex-row">
         {/* Upper Left */}
         <div className="flex-1 flex items-center justify-center">
+        <ResponsiveContainer width="100%" height="80%">
         <AreaChart width={630} height={300} data={data}
   margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
   <defs>
@@ -162,14 +163,15 @@ return(
   <Area type="monotone" dataKey="uv" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
   <Area type="monotone" dataKey="pv" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
 </AreaChart>
+</ResponsiveContainer>
         </div>
         
         {/* Upper Right */}
         <div className="flex-1 flex items-center justify-center">
         <ResponsiveContainer width="100%" height="100%">
         <PieChart width={400} height={200}>
-          <Pie data={data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#8884d8" />
-          <Pie data={data02} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#82ca9d" label />
+          <Pie data={data01} dataKey="value" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
+          <Pie data={data02} dataKey="value" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
         </PieChart>
       </ResponsiveContainer>
         </div>

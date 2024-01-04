@@ -18,14 +18,15 @@
     
     margin: auto;
     width: 100% ;
-    padding-left: 250px;
-    padding-right: 250px;
+    padding-left: 150px;
+    padding-right: 150px;
     padding-top: 8px; 
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
   
   @media (max-width: 1536px) {
     .layoutfinal {
@@ -101,7 +102,8 @@
     --ring: 222.2 84% 4.9%;
  
     --radius: 0.5rem;
-    --crophover: 145 50% 70%
+    --crophover: 145 50% 70%;
+    --lbg: 44 1% 96%;
   }
  
   .dark {
@@ -133,7 +135,8 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
 
-    --crophover:145 40% 46%
+    --crophover:145 40% 46%;
+    --lbg: 44 1% 3%;
   }
 }
  

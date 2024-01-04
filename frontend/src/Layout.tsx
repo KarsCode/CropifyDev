@@ -12,8 +12,7 @@ export default function Layout() {
       <Navbar/>
       <Outlet />
       <Footer/>
-      
-    </div>
+      </div>
     <Toaster/>
     </ThemeProvider>
   );
