@@ -9,6 +9,7 @@ import bcrypt from   'bcrypt';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import CookieParser from "cookie-parser";
+import nodemailer from 'nodemailer';
 
 
 
@@ -91,6 +92,38 @@ app.post('/register', async (req, res) => {
   });
 
 
+
+  app.post('/email', async (req, res) => {
+    try {
+      const { email, text } = req.body;
+  
+      // Nodemailer transporter configuration (update with your email service details)
+      const transporter = nodemailer.createTransport({
+        service: 'hotmail',
+        auth: {
+          user: 'RAM_page123@outlook.com',
+          pass: 'RAMpage@123',
+        },
+      });
+  
+      // Email message options
+      const mailOptions = {
+        from: "RAM_page123@outlook.com",
+        to: 'RAM_page123@outlook.com', // Use the recipient email from the request
+        subject: `Mail From ${email}`,
+        text: text, // Use the text from the request
+      };
+  
+      // Send the email
+      const info = await transporter.sendMail(mailOptions);
+  
+      console.log('Email sent:', info.response);
+      res.status(200).send({ message: 'Email sent successfully' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      res.status(500).send({ error: 'Internal Server Error' });
+    }
+  });
 
 
 app.listen(PORT,()=>{

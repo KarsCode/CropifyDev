@@ -17,6 +17,8 @@ import {
 import { Input } from "../ui/input"
 import { Textarea } from "../ui/textarea"
 import { useToast } from "../ui/use-toast"
+import axios from "axios"
+import { VITE_API_URL } from "../../setupEnv.tsx"
 
 
 const formSchema = z.object({
@@ -30,6 +32,8 @@ const formSchema = z.object({
     message:"Must be lesser than 200 characters."
   })
 })
+
+
 
 export function ProfileForm() {
   // ...
@@ -49,6 +53,8 @@ export function ProfileForm() {
         const currentTime = new Date();
         const options = { weekday: 'long' as const, year: 'numeric' as const, month: 'long' as const, day: 'numeric' as const, hour: 'numeric' as const, minute: 'numeric' as const, second: 'numeric' as const };
         const formattedTime = currentTime.toLocaleDateString('en-US',options);
+
+        
         
         toast({
             title: "Your submission was succesfully recorded at: ",
@@ -59,7 +65,19 @@ export function ProfileForm() {
             ),  
           })
         // ✅ This will be type-safe and validated.
-        console.log(values)
+
+        const sendEmail = async () => {
+          try {
+            const response = await axios.post(`${VITE_API_URL}/email`, values);
+        
+            console.log('Email sent successfully:', response.data);
+          } catch (error) {
+            console.error('Error sending email:', error);
+          }
+        };
+
+        sendEmail();
+
       }
 
   return (
