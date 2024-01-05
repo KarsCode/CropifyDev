@@ -11,8 +11,10 @@ export default function Layout() {
    //console.log(user);
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-    <div className="layoutfinal" >
+      <div className="navbar">
       <Navbar/>
+      </div>
+      <div className="layoutfinal" >
       <Outlet />
       <Footer/>
       </div>
