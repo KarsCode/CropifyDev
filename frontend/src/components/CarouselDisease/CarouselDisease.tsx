@@ -10,7 +10,22 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 
-const CarouselDisease = () => {
+
+
+
+interface CarouselProps {
+  title:string;
+  image1:string;
+  description:string;
+  history:string;
+  medication:string;
+  solutions:string;
+  image2:string;
+}
+
+
+
+const CarouselDisease: React.FC<CarouselProps> = ( {title , image1, description , history, medication , solutions , image2} ) => {
     
 
     return (
@@ -24,7 +39,7 @@ const CarouselDisease = () => {
                     <Card>
                         <CardContent className="flex aspect-video items-center justify-center bg-background">
                         {/* Use standard HTML img element */}
-                        Title
+                        {title}
                         </CardContent>
                     </Card>
                     </div>
@@ -40,7 +55,7 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                        Image 1  
+                        <img src={image1}></img>
                     </CardContent>
                   </Card>
                 </div>
@@ -53,7 +68,7 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                        Description
+                        {description}
                     </CardContent>
                   </Card>
                 </div>
@@ -66,7 +81,7 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                      History
+                      {history}
                     </CardContent>
                   </Card>
                 </div>
@@ -79,7 +94,7 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                      Medication
+                      {medication}
                     </CardContent>
                   </Card>
                 </div>
@@ -91,7 +106,7 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                      Solutions
+                      {solutions}
                     </CardContent>
                   </Card>
                 </div>
@@ -103,7 +118,7 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                      Image 2
+                      <img src={image2}></img>
                     </CardContent>
                   </Card>
                 </div>
