@@ -33,10 +33,6 @@ const links = [
     path: "/Contact",
   },
   {
-    title: "Profile",
-    path: "/Profile",
-  },
-  {
     title: "Dashboard",
     path: "/Dashboard",
   },
