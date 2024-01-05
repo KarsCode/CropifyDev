@@ -4,7 +4,7 @@ import { ModeToggle } from './ModeToggle';
 // import React, { use, useState } from 'react'
 const Navbar = () => {
   return (
-    <div className='flex h-24 items-center justify-between border-b-2 border-ring'>
+    <div className='flex h-24 items-center justify-around shadow-md border-b border-ring bg-background'>
       <div>
         <a href="/">
           <img src={'./final_logo.png'} alt='Cropify' width={300} height={40} />

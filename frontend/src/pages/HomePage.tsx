@@ -1,6 +1,6 @@
 
 
-import CarouselComp from '../components/Carousel/carouselcomp'
+import CarouselComp from '../components/CarouselHome/carouselcomp'
 import HomeDialog from '../components/HomeDialog/HomeDialog'
 // import HomeDialog from '@/components/HomeDialog.tsx/HomeDialog'
 // import dynamic from 'next/dynamic'
