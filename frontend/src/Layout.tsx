@@ -16,8 +16,8 @@ export default function Layout() {
       </div>
       <div className="layoutfinal" >
       <Outlet />
-      <Footer/>
       </div>
+      <Footer/>
     <Toaster/>
     </ThemeProvider>
   );

@@ -20,8 +20,9 @@
     width: 100% ;
     padding-left: 150px;
     padding-right: 150px;
-    padding-top: 8px; 
-    min-height: 100vh; 
+    padding-top: 20px; 
+    padding-bottom: 30px;
+    min-height: 84vh; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
