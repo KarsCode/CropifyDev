@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ReloadIcon } from "@radix-ui/react-icons"
  
 import { Button } from "../components/ui/button"
+import CarouselDisease from "../components/CarouselDisease/CarouselDisease";
 
 
 export default function PlantDisease() {
@@ -52,7 +53,6 @@ if(data["document"])
     <>
       <div>
         <CarouselDisease/>
-      </div>
       </div>
     </>
   );
