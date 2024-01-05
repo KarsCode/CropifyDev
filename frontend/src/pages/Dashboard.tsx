@@ -506,7 +506,7 @@ const YourComponent: React.FC = () => {
         {/* Lower Left */}
         <div className="flex-1 flex flex-col items-center justify-center">
         <div className='font-bold pb-5 pt-20'>
-        Another graph
+        Crop Health Graph
         </div>
           <ResponsiveContainer width="100%" height="100%">
           <BarChart width={600} height={400} data={cropHealthData}>
@@ -527,7 +527,7 @@ const YourComponent: React.FC = () => {
         {/* Lower Right */}
         <div className="flex-1 flex flex-col items-center justify-center">
         <div className='font-bold pb-5 pt-20'>
-        Rainfall(mm) And Profit Comparison
+        Rainfall(mm) And Profit(%) Comparison
         </div>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
