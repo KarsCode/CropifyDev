@@ -48,11 +48,10 @@ if (!data || !data["document"]) {
 if(data["document"])
   {
     const document=data["document"];
-    console.log(document);
   return (
     <>
       <div>
-        <CarouselDisease/>
+        <CarouselDisease image1={document['Image1']} image2={document['Image2']} history={document['history']} description={document['description']} medication={document['medication']} solutions={document['solutions']} title={document['disease_name']}/>
       </div>
     </>
   );
