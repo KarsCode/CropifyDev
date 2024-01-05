@@ -11,24 +11,101 @@ import {
 } from "../ui/carousel";
 
 const CarouselDisease = () => {
-    const imgPaths = ['/C3.jpg', '/C1.jpg', '/C2.jpg', '/C5.jpeg', '/C4.jpg'];
+    
 
     return (
       <div>
         <Carousel className="w-full">
           <CarouselContent>
-            {imgPaths.map((path, index) => (
-              <CarouselItem key={index}>
+                
+                <CarouselItem>
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                      <img src={path} alt={`Image ${index + 1}`} width={500} height={100} />
+                      Title
                     </CardContent>
                   </Card>
                 </div>
-              </CarouselItem>
-            ))}
+                </CarouselItem>
+
+
+
+                <CarouselItem>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-video items-center justify-center bg-background">
+                      {/* Use standard HTML img element */}
+                        Image 1  
+                    </CardContent>
+                  </Card>
+                </div>
+                </CarouselItem>
+
+
+
+                <CarouselItem>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-video items-center justify-center bg-background">
+                      {/* Use standard HTML img element */}
+                        Description
+                    </CardContent>
+                  </Card>
+                </div>
+                </CarouselItem>
+
+
+
+                <CarouselItem>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-video items-center justify-center bg-background">
+                      {/* Use standard HTML img element */}
+                      History
+                    </CardContent>
+                  </Card>
+                </div>
+                </CarouselItem>
+
+
+
+                <CarouselItem>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-video items-center justify-center bg-background">
+                      {/* Use standard HTML img element */}
+                      Medication
+                    </CardContent>
+                  </Card>
+                </div>
+                </CarouselItem>
+
+
+                <CarouselItem>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-video items-center justify-center bg-background">
+                      {/* Use standard HTML img element */}
+                      Solutions
+                    </CardContent>
+                  </Card>
+                </div>
+                </CarouselItem>
+
+
+                <CarouselItem>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-video items-center justify-center bg-background">
+                      {/* Use standard HTML img element */}
+                      Image 2
+                    </CardContent>
+                  </Card>
+                </div>
+                </CarouselItem>
+
+                
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />

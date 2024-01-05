@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react'
 import { ScrollArea } from '../components/ui/scroll-area'
 import { useParams } from 'react-router-dom';
 import { VITE_API_URL } from '../setupEnv';
+import Markdown  from 'react-markdown'
 
 
 const SingleBlogPost = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  const [markdownContent, setMarkdownContent] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +31,20 @@ const SingleBlogPost = () => {
   }, [id]);
   
   console.log(data);
+
+  useEffect(() => {
+    // Assume you have the file path or URL
+    const filePath = '/README.md';
+
+    // Fetch the Markdown content from the file
+    fetch(filePath)
+      .then((response) => response.text())
+      .then((content) => setMarkdownContent(content))
+      .catch((error) => console.error('Error fetching Markdown content:', error));
+  }, []);
+
+
+  
   return (
     <div className='flex gap-24 h-[calc(100vh-200px)] pb-5'>
       {/* ImageContainer */}
@@ -59,6 +75,7 @@ const SingleBlogPost = () => {
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nostrum architecto eum saepe, debitis dolores magnam neque exercitationem ad earum maxime nobis, maiores, asperiores esse natus ipsa doloremque iusto voluptate!Lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, temporibus explicabo, eaque atque a odio placeat ratione sit molestias minus quo amet assumenda quibusdam eum ut libero quas sed error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur quam necessitatibus id fuga odit doloribus adipisci iusto facere accusamus! Architecto, quam sunt impedit iure id recusandae odio reprehenderit dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur aliquid illo nisi voluptatem corrupti! A, doloremque sit consequuntur eos odit, numquam ad porro ipsum minus nobis eaque adipisci, amet quos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, nesciunt! Sequi aut natus vero sunt accusantium quas modi sint doloribus distinctio, cum voluptas omnis molestias, hic, autem corporis ipsam laudantium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quasi molestiae aut nulla quae! Ipsam, distinctio? Esse quia quas eius neque? A possimus numquam atque quibusdam, nam quasi dolores. Ullam. */}
 
             <Markdown>{markdownContent}</Markdown>
+            
           </ScrollArea>
         </div>
 
