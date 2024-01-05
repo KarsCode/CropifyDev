@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ReloadIcon } from "@radix-ui/react-icons"
  
 import { Button } from "../components/ui/button"
-import CarouselDisease from "../components/CarouselDisease/CarouselDisease";
+
 
 export default function PlantDisease() {
   const { id } = useParams();
@@ -39,11 +39,12 @@ if (!data || !data["document"]) {
     Loading
   </Button>
   </div>
-  )
-  }
 
-  // return only if data["document"]
-  if(data["document"])
+  );
+}
+
+  //return only if data["document"]
+if(data["document"])
   {
     const document=data["document"];
     console.log(document);
@@ -52,8 +53,9 @@ if (!data || !data["document"]) {
       <div>
         <CarouselDisease/>
       </div>
-      
+      </div>
     </>
   );
 }
 }
+

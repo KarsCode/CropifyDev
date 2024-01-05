@@ -27,7 +27,7 @@ router.get('/:blogId', (req, res) => {
         const database = client.db('Cropify');
         const collection = database.collection('Blogs');
         const numericBlogId = parseInt(blogId, 10);
-        const foundDocument = await collection.findOne({ blogId: numericBlogId });
+        const foundDocument = await collection.findOne({ blog_id: numericBlogId });
         res.json(foundDocument);
     }
     handleFetch();
