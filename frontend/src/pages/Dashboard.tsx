@@ -4,45 +4,63 @@ import { RadarChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar,AreaChart
 export default function Dashboard (){
   const data = [
     {
-      name: 'Page A',
-      uv: 4000,
-      pv: 2400,
+      name: 'Jan',
+      pv: 1200,
+      amt: 2000,
+    },
+    {
+      name: 'Feb',
+      pv: 1600,
       amt: 2400,
     },
     {
-      name: 'Page B',
-      uv: 3000,
-      pv: 1398,
+      name: 'March',
+      pv: 1998,
       amt: 2210,
     },
     {
-      name: 'Page C',
-      uv: 2000,
-      pv: 9800,
+      name: 'Apr',
+      pv: 2098,
+      amt: 2210,
+    },
+    {
+      name: 'May',
+      pv: 1000,
       amt: 2290,
     },
     {
-      name: 'Page D',
-      uv: 2780,
+      name: 'June',
+      pv: 2050,
+      amt: 2290,
+    },
+    {
+      name: 'July',
+      pv: 2058,
+      amt: 2000,
+    },
+    {
+      name: 'Aug',
       pv: 3908,
       amt: 2000,
     },
     {
-      name: 'Page E',
-      uv: 1890,
-      pv: 4800,
+      name: 'Sep',
+      pv: 1990,
+      amt: 2000,
+    },
+    {
+      name: 'Oct',
+      pv: 1800,
       amt: 2181,
     },
     {
-      name: 'Page F',
-      uv: 2390,
-      pv: 3800,
+      name: 'Nov',
+      pv: 1300,
       amt: 2500,
     },
     {
-      name: 'Page G',
-      uv: 3490,
-      pv: 4300,
+      name: 'Dec',
+      pv: 1800,
       amt: 2100,
     },
   ];
@@ -163,6 +181,7 @@ return(
   <Area type="monotone" dataKey="uv" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
   <Area type="monotone" dataKey="pv" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
 </AreaChart>
+
 </ResponsiveContainer>
         </div>
         

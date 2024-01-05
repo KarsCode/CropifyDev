@@ -19,7 +19,8 @@ const NavLink: React.FC<NavLinkProps> = ({ item }) => {
   return (
     <a
       href={item.path}
-      className={`inline-block px-4 py-2 rounded-full border bg-background border-primary ${pathName === item.path ? 'bg-crophover' : ''} hover:bg-crophover transition duration-300 ease-in-out`}
+      className={`inline-block px-4 py-2 rounded-full border bg-background shadow-md ${pathName === item.path ? 'bg-crophover' : ''} hover:bg-crophover transition duration-200 ease-in-out` }
+      style={{borderRadius: '20px'}}
 
     >
       {item.title}
