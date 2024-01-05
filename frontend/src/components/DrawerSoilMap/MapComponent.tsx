@@ -19,11 +19,14 @@ interface ModalState {
 }
 
 
-
-
 const ChoroplethMap: React.FC = () => {
   const center: [number,number] = [20.5937, 78.9629];
   const [hoveredState, setHoveredState] = useState<string | null>(null);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [modalState, setModalState] = useState<ModalState>({
+    isoCode: null,
+    information: null,
+  });
 
   
 
@@ -114,7 +117,13 @@ const ChoroplethMap: React.FC = () => {
   const handleFeatureClick = (event: any) => {
     const isoCode = event.layer.feature.properties.ISO_1;
     const information = soilInformation[isoCode];
+    setModalIsOpen(true);
+    setModalState({ isoCode, information });
     // Add logic to fetch and display state information based on isoCode
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
   };
 
   
@@ -139,6 +148,21 @@ const ChoroplethMap: React.FC = () => {
 
 
    </MapContainer>
+
+   {modalState.isoCode && (
+        <Card>
+          <CardHeader>
+            <CardTitle>{modalState.information?.name || 'Title'}</CardTitle>
+            <CardDescription>{modalState.information?.description || 'Description'}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            {/* <p>{modalState.information?.content || 'Content'}</p> */}
+          </CardContent>
+          <CardFooter>
+            <p>Card Footer</p>
+          </CardFooter>
+        </Card>
+      )}
 
 
    </div>
