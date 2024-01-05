@@ -38,7 +38,7 @@ router.get('/:diseaseId', (req, res) => {
         const database = client.db('Cropify');
         const collection = database.collection('PlantDisease');
         const numericSoilId = parseInt(soilId, 10);
-        const foundDocument = await collection.findOne({ diseaseId: numericSoilId });
+        const foundDocument = await collection.findOne({ disease_id: numericSoilId });
         res.json({ document: foundDocument });
 
     }

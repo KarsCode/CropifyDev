@@ -42,10 +42,11 @@ if (!data || !data["document"]) {
   )
   }
 
-  console.log(data);
   //return only if data["document"]
   if(data["document"])
   {
+    const document=data["document"];
+    console.log(document);
   return (
     <>
        {id}
@@ -53,11 +54,11 @@ if (!data || !data["document"]) {
       {/* Title */}
       <div className='flex flex-col gap-8 w-1/2'>
         <h1 className='text-6xl font-bold'>
-          Disease Name
+          {document.disease_name}
         </h1>
 
         <p className='p-2 text-xl border -4 border-primary'>
-        Description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id doloremque illum labore placeat veritatis? Qui adipisci officiis numquam. Dolor voluptates ipsum quasi eligendi consequatur aut corrupti alias illum dolorem qui.
+        {document.history}
         </p>
         
 

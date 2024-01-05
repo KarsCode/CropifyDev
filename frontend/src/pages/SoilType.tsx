@@ -41,11 +41,12 @@ if (!data || !data["document"]) {
   }
 
 if(data["document"]){
-  const imageData=data["document"]["Image1"];
+  const document=data["document"];
+  console.log(document);
   return (
     <>
       {id}
-      <img src={imageData} alt="Image Description"></img>
+
     </>
   );
 }
