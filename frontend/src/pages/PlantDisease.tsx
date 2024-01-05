@@ -82,6 +82,9 @@ if (!data || !data["document"]) {
 
         <p className='p-2 text-xl border -4 border-primary'>
           Solutions: Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae perspiciatis magnam id reiciendis non voluptatem corporis facere voluptas, earum ipsum veritatis? Dolorem, id eveniet. Odio fugiat sequi autem cupiditate nobis!
+
+
+          Check
         </p>
         
       </div>
