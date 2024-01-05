@@ -83,6 +83,8 @@
   :root {
     --background: 31 63% 95%;
     --foreground: 222.2 84% 4.9%;
+    --text-color-light: #333; /* Text color for light mode */
+    --text-color-dark: #eee;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -177,4 +179,70 @@
   background-color: rgba(155, 155, 155, 0.5);
   border-radius: 5px;
   border: 1px solid rgba(240, 240, 240, 0.5);
+}
+
+/* Style for the select box */
+.select-box {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  padding: 1px 30px 1px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  appearance: none;
+  background-color: #fff5f5;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%23aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color-light); /* Default text color for light mode */
+}
+
+/* Hover effect for the select box */
+.select-box:hover {
+  border-color: #aaa;
+}
+
+/* Focus effect for the select box */
+.select-box:focus {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown indicator styling */
+.select-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #aaa;
+  transition: transform 0.3s ease;
+  transform: translateY(-50%) rotate(0deg);
+}
+
+/* Styling for the dropdown open state */
+.select-box:focus::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Styling for the dropdown options */
+.select-box option {
+  background-color: #f7f7f7;
+  color: var(--text-color-light); /* Text color for dropdown options in light mode */
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --text-color-light: #eee; /* Text color for light mode */
+  --text-color-dark: #333; /* Text color for dark mode */
+}
+
+/* Dark mode styles for dropdown options */
+.dark-mode .select-box option {
+  color: var(--text-color-dark); /* Text color for dropdown options in dark mode */
 }
