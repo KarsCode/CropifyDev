@@ -10,7 +10,7 @@ export default function Layout() {
   //  const {user} = useContext(UserContext);
    //console.log(user);
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="navbar">
       <Navbar/>
       </div>
