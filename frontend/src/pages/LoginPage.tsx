@@ -3,6 +3,8 @@ import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import { VITE_API_URL } from '../setupEnv';
 import { UserContext } from '../UserContext.tsx';
+import { Input } from '../components/ui/input.tsx';
+import { Button } from '../components/ui/button.tsx';
 
 
 
@@ -35,29 +37,36 @@ const LoginPage: FC = () => {
   }
 
   return (
-    <div className="mt-4 grow flex items-center justify-around">
-      <div className="mb-64">
-        <h1 className="text-4xl text-center mb-4">Login</h1>
-        <form className="max-w-md mx-auto" onSubmit={handleLoginSubmit}>
-          <input
+    <div className="mt-24 flex flex-col items-center justify-around">
+      <div className="mb-64 flex flex-col gap-5">
+        <h1 className="text-4xl font-bold text-center pb-4">Begin your journey.</h1>
+        <form className="max-w-md mx-auto flex flex-col gap-12" onSubmit={handleLoginSubmit}>
+          {/* <input
             type="email"
             placeholder="your@email.com"
             value={email}
             onChange={handleEmailChange}
-          />
-          <input
+          /> */}
+          <Input 
+          type="email"
+          placeholder="your@email.com"
+          value={email}
+          onChange={handleEmailChange}/>
+          <Input
             type="password"
             placeholder="password"
             value={password}
             onChange={handlePasswordChange}
           />
-          <button className="primary">Login</button>
+
+          <Button>Login</Button>
+          {/* <button className="primary">Login</button> */}
           <div className="text-center py-2 text-gray-500">
             Don't have an account yet?{' '}
             <Link className="underline text-foreground" to={'/register'}>
               Register now
             </Link>
-          </div>
+          </div>  
         </form>
       </div>
     </div>

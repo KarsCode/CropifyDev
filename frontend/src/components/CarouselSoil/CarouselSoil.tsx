@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 
-const CarouselDisease = () => {
+const CarouselSoil = () => {
     
 
     return (
@@ -24,7 +24,7 @@ const CarouselDisease = () => {
                     <Card>
                         <CardContent className="flex aspect-video items-center justify-center bg-background">
                         {/* Use standard HTML img element */}
-                        Title
+                        Type
                         </CardContent>
                     </Card>
                     </div>
@@ -53,7 +53,7 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                        Description
+                        Key Characteristics
                     </CardContent>
                   </Card>
                 </div>
@@ -66,7 +66,7 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                      History
+                      Nutrient Content
                     </CardContent>
                   </Card>
                 </div>
@@ -79,7 +79,8 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                      Medication
+                      Water Retention
+                      Common Crops
                     </CardContent>
                   </Card>
                 </div>
@@ -91,7 +92,19 @@ const CarouselDisease = () => {
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center bg-background">
                       {/* Use standard HTML img element */}
-                      Solutions
+                      Health Tips
+                      Environmental Impact
+                    </CardContent>
+                  </Card>
+                </div>
+                </CarouselItem>
+
+                <CarouselItem>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-video items-center justify-center bg-background">
+                      {/* Use standard HTML img element */}
+                      Local Climate Considerations
                     </CardContent>
                   </Card>
                 </div>
@@ -119,4 +132,4 @@ const CarouselDisease = () => {
     );
 }
 
-export default CarouselDisease
+export default CarouselSoil

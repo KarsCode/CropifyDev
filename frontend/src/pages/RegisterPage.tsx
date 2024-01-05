@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { VITE_API_URL } from '../setupEnv';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Input } from '../components/ui/input';
+import { Button } from '../components/ui/button';
 
 
 const RegisterPage = () => {
@@ -29,31 +31,33 @@ const RegisterPage = () => {
 
   return (
     <div className="mt-4 grow flex items-center justify-around">
-      <div className="mb-64">
-        <h1 className="text-4xl text-center mb-4">Register</h1>
-        <form className="max-w-md mx-auto" onSubmit={registerUser}>
-          <input
+      <div className="mb-64 flex flex-col gap-5 w-[90%]">
+        <h1 className="text-4xl font-bold text-center mb-4">Join us today.</h1>
+        <form className="max-w-md mx-auto flex flex-col gap-12" onSubmit={registerUser}>
+          <Input
             type="text"
             placeholder="Enter Name"
             value={name}
             onChange={(ev) => setName(ev.target.value)}
+            className='w-96 flex items-center justify-center'
           />
-          <input
+          <Input
             type="email"
-            placeholder="Enter E-Mail"
+            placeholder="Enter e-mail"
             value={email}
             onChange={(ev) => setEmail(ev.target.value)}
           />
-          <input
+          <Input
             type="password"
             placeholder="Enter Password"
             value={password}
             onChange={(ev) => setPassword(ev.target.value)}
           />
-          <button className="primary">Register</button>
+
+          <Button>Register Here</Button>
           <div className="text-center py-2 text-gray-500">
             Already a member?{' '}
-            <Link className="underline text-black" to={'/login'}>
+            <Link className="underline text-foreground" to={'/login'}>
               Login
             </Link>
           </div>

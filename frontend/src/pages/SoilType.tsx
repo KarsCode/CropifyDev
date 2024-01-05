@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ReloadIcon } from "@radix-ui/react-icons"
  
 import { Button } from "../components/ui/button"
+import CarouselSoil from "../components/CarouselSoil/CarouselSoil";
 
 export default function SoilType() {
   const { id } = useParams();
@@ -46,6 +47,9 @@ if(data["document"]){
   return (
     <>
       {id}
+      <div>
+        <CarouselSoil/>
+      </div>
 
     </>
   );
