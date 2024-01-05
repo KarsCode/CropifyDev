@@ -1,37 +1,49 @@
-import React from 'react'
-import { Button } from '../ui/button'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Button } from '../ui/button';
+import { Link } from 'react-router-dom';
 
-const PostCard = () => {
+
+interface DocumentInterface {
+  title: string;
+  description: string;
+  article: string;
+  date: string;
+  image: string;
+  blog_id:number;
+}
+
+interface PostCardProps {
+
+  document: DocumentInterface;
+}
+
+const PostCard: React.FC<PostCardProps> = ( {document} ) => {
+  const link = "/Blog/"+document.blog_id.toString();
   return (
     <div className='flex flex-col gap-10 mb-5'>
       <div className='flex relative'>
         <div className='w-[90%] relative'>
-                <img src="./BlogDemo.jpeg" style={{ objectFit: 'cover'}}/>
+          <img src={document.image} style={{ objectFit: 'cover' }} alt='Blog Post' />
         </div>
         {/* Date */}
-        <div className='font-extralight rotate-[90deg] m-auto'>01.01.2024</div>
-
-
+        <div className='font-extralight rotate-[90deg] m-auto'>{document.date}</div>
       </div>
 
       <div>
         {/* Title */}
-
-        <h1 className='w-[90%] text-2xl font-medium mb-3'>Title</h1>
+        <h1 className='w-[90%] text-2xl font-medium mb-3'>{document.title}</h1>
 
         {/* Desc */}
-        <p className='w-[90%] mmb-5 font-light'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At eligendi voluptatem eius temporibus neque similique, obcaecati vitae natus nam tempora repudiandae quo ullam porro consequatur nulla eos cumque laboriosam repellat!</p>
-        {/* <a href="/Blog/Post" className="font-light hover:underline">READ MORE</a> */}
+        <p className='w-[90%] mb-5 font-light'>{document.description}</p>
+
         <div className='pt-4 pb-4'>
-            <Link to="/Blog/pageId">
-                <Button>READ MORE</Button>
-            </Link>
+          <Link to={link}>
+            <Button>READ MORE</Button>
+          </Link>
         </div>
       </div>
     </div>
-    
-  )
-}
+  );
+};
 
-export default PostCard
+export default PostCard;

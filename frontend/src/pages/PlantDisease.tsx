@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ReloadIcon } from "@radix-ui/react-icons"
  
 import { Button } from "../components/ui/button"
-import CarouselDisease from "../components/CarouselDisease/CarouselDisease";
+
 
 export default function PlantDisease() {
   const { id } = useParams();
@@ -31,19 +31,19 @@ export default function PlantDisease() {
   }, [id]);
 
   // Render loading state if data is still fetching
-// if (!data || !data["document"]) {
-//   return (
-//     <div className="mt-64 flex flex-col items-center justify-center">
-//     <Button disabled className="bg-destructive">
-//     <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-//     Loading
-//   </Button>
-//   </div>
-//   )
-//   }
+if (!data || !data["document"]) {
+  return (
+    <div className="mt-64 flex flex-col items-center justify-center">
+    <Button disabled className="bg-destructive">
+    <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+    Loading
+  </Button>
+  </div>
+  );
+}
 
   //return only if data["document"]
-  if(data["document"])
+if(data["document"])
   {
     const document=data["document"];
     console.log(document);
@@ -76,10 +76,10 @@ export default function PlantDisease() {
         
         </div>
       </div>
-      
+      </div>
     </>
   );
 
   
 }
-//}
+}
