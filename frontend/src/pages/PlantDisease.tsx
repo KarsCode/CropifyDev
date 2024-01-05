@@ -42,14 +42,39 @@ export default function PlantDisease() {
 //   )
 //   }
 
-  console.log(data);
   //return only if data["document"]
-  // if(data["document"])
-  // {
+  if(data["document"])
+  {
+    const document=data["document"];
+    console.log(document);
   return (
     <>
-      <div>
-        <CarouselDisease/>
+       {id}
+      <div className='flex gap-48'>
+      {/* Title */}
+      <div className='flex flex-col gap-8 w-1/2'>
+        <h1 className='text-6xl font-bold'>
+          {document.disease_name}
+        </h1>
+
+        <p className='p-2 text-xl border -4 border-primary'>
+        {document.history}
+        </p>
+        
+
+        <p className='p-2 text-xl border -4 border-primary'>
+          History: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero ullam, molestias facilis nemo voluptatibus voluptatum eius labore placeat laborum deserunt in, consequatur tempora suscipit ex, nam quisquam impedit! Error, blanditiis.
+        </p>
+
+        <p className='p-2 text-xl border -4 border-primary'>
+          Medication: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero ullam, molestias facilis nemo voluptatibus voluptatum eius labore placeat laborum deserunt in, consequatur tempora suscipit ex, nam quisquam impedit! Error, blanditiis.
+        </p>
+
+        <div>
+          
+          
+        
+        </div>
       </div>
       
     </>

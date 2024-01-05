@@ -31,6 +31,7 @@ export default function SoilType() {
 
   // Render loading state if data is still fetching
 if (!data || !data["document"]) {
+  
     return (
       <Button disabled>
       <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
@@ -39,12 +40,13 @@ if (!data || !data["document"]) {
     )
   }
 
-  console.log(data);
 if(data["document"]){
+  const document=data["document"];
+  console.log(document);
   return (
     <>
       {id}
-      {/* Render your component using the fetched data */}
+
     </>
   );
 }
