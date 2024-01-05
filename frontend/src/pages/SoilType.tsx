@@ -7,7 +7,7 @@ import { Button } from "../components/ui/button"
 
 export default function SoilType() {
   const { id } = useParams();
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(null); 
 
   useEffect(() => {
     const fetchData = async () => {
