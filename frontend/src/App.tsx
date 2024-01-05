@@ -25,7 +25,7 @@ function App() {
         <Route path="/CropDoctor" element={<CropDoctor/>} />
         <Route path="/SoilCheck" element={<SoilCheck/>} />
         <Route path="/Blog" element={<BlogPage/>} />
-        <Route path="/Blog/pageId" element={<SingleBlogPost/>} />
+        <Route path="/Blog/:id" element={<SingleBlogPost/>} />
         <Route path="/Contact" element={<ContactPage/>} />
         <Route path="/Profile" element={<div>Profile</div>} />
         <Route path="/plantDisease/:id" element={<PlantDisease/>} />

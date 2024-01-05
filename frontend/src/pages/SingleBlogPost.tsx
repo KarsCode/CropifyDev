@@ -1,9 +1,37 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ScrollArea } from '../components/ui/scroll-area'
+import { useParams } from 'react-router-dom';
+import { VITE_API_URL } from '../setupEnv';
 
 
 const SingleBlogPost = () => {
+  const { id } = useParams();
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${VITE_API_URL}/Blogs/${id}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    if (id) {
+      fetchData();
+    }
+  }, [id]);
+  
+  console.log(data);
+
+
+
   return (
     <div className='flex gap-24 h-[calc(100vh-200px)] pb-5'>
       {/* ImageContainer */}

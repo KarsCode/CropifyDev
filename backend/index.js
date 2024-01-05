@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from "cors";
 import plantRoute from './routes/plantRoute.js'
 import soilRoute from './routes/soilRoute.js'
+import blogRoute from './routes/blogRoute.js'
 import UserModel from "./models/User.js";
 import bcrypt from   'bcrypt';
 import mongoose from 'mongoose';
@@ -32,6 +33,7 @@ mongoose.connect(process.env.DATABASE_URL+"/Cropify");
 
 app.use('/plantDisease',plantRoute);
 app.use('/soilType',soilRoute);
+app.use('/Blogs',blogRoute);
 
 
 app.post('/register', async (req, res) => {
@@ -89,19 +91,7 @@ app.post('/register', async (req, res) => {
   });
 
 
-  app.post('/blogs',async (req,res) => {
-    const uri = process.env.DATABASE_URL;
-    const handleFetch = async () => {
-      const client = new MongoClient(uri);
-        await client.connect();
-        const database = client.db('Cropify');
-        const collection = database.collection('Blogs');
-        const foundBlogs = await collection.find().limit(6);
-        res.json(foundBlogs);
-    }
-    handleFetch();
-    res.json()
-  });
+
 
 app.listen(PORT,()=>{
     console.log(`Currently Listening On Port ${PORT}`)
