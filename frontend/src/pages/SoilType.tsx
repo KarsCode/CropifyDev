@@ -64,10 +64,10 @@ if(data["document"]){
           {document['soil_type']} 
         </div>
 
-        <div className="flex flex-col gap-10 items-center ">
+        <div className="flex flex-col gap-10 ">
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">Key Characteristics</h1> </CardHeader>
             <CardContent>
               <p>
@@ -79,7 +79,7 @@ if(data["document"]){
         </div>
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">Nutrient Content</h1> </CardHeader>
             <CardContent>
               <p>
@@ -91,7 +91,7 @@ if(data["document"]){
         </div>
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">Water Retention</h1> </CardHeader>
             <CardContent>
               <p>
@@ -103,7 +103,7 @@ if(data["document"]){
         </div>
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">Common Crops</h1> </CardHeader>
             <CardContent>
               <p>
@@ -115,7 +115,7 @@ if(data["document"]){
         </div>
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">Health Tips</h1> </CardHeader>
             <CardContent>
             <p>
@@ -127,7 +127,7 @@ if(data["document"]){
         </div>
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">Environmental Impact</h1> </CardHeader>
             <CardContent>
               <p>
@@ -140,7 +140,7 @@ if(data["document"]){
 
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">CLimate Considerations</h1> </CardHeader>
             <CardContent>
               <p>
@@ -152,12 +152,12 @@ if(data["document"]){
         </div>
 
 
-        <div className="flex  gap-48">
-          <div className="border-4 border-border">
+        <div className="flex gap-48 items-center justify-between">
+          <div className="border-4 border-border w-fit h-fit">
             <img src={document['Image1']}></img>
           </div> 
 
-          <div className="border-4 border-border">
+          <div className="border-4 border-border w-fit h-fit">
             <img src={document['Image2']}></img>
           </div>
         </div>

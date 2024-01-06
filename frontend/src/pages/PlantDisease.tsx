@@ -1,9 +1,6 @@
 import { useParams } from "react-router-dom";
 import { VITE_API_URL } from "../setupEnv";
 import { useEffect, useState } from "react";
-import { ReloadIcon } from "@radix-ui/react-icons"
- 
-import { Button } from "../components/ui/button"
 import { MutatingDots } from "react-loader-spinner";
 import {
   Card,
@@ -41,7 +38,7 @@ export default function PlantDisease() {
 if (!data || !data["document"]) {
   return (
     <div className="mt-64 flex flex-col items-center justify-center">
-      <MutatingDots
+    <MutatingDots
         visible={true}
         height="100"
         width="100"
@@ -52,7 +49,7 @@ if (!data || !data["document"]) {
         wrapperStyle={{}}
         wrapperClass=""
         />
-        </div>
+  </div>
 
   );
 }
@@ -67,17 +64,17 @@ if(data["document"])
         {/* <CarouselDisease image1={document['Image1']} image2={document['Image2']} history={document['history']} description={document['description']} medication={document['medication']} solutions={document['solutions']} title={document['disease_name']}/> */}
 
         <div className="text-8xl font-bold pb-20">
-          {document['disease_name']}
+          {document['disease_name']} 
         </div>
 
-        <div className="flex flex-col gap-10 items-center ">
+        <div className="flex flex-col gap-10 ">
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">Description</h1> </CardHeader>
             <CardContent>
               <p>
-                {document['description']}
+              {document['description']}
               </p>
 
             </CardContent>
@@ -85,11 +82,11 @@ if(data["document"])
         </div>
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">History</h1> </CardHeader>
             <CardContent>
-            <p>
-                {document['history']}
+              <p>
+              {document['history']}
               </p>
 
             </CardContent>
@@ -97,11 +94,11 @@ if(data["document"])
         </div>
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">Medication</h1> </CardHeader>
             <CardContent>
-            <p>
-                {document['medication']}
+              <p>
+              {document['medication']}
               </p>
 
             </CardContent>
@@ -109,11 +106,11 @@ if(data["document"])
         </div>
 
         <div className="text-xl ">
-          <Card className="hover:bg-crophover">
+          <Card className="hover:bg-crophover transition ease-in duration-250">
             <CardHeader> <h1 className="font-bold underline">Solution</h1> </CardHeader>
             <CardContent>
               <p>
-                {document['solutions']}
+              {document['solutions']}
               </p>
 
             </CardContent>
@@ -121,13 +118,13 @@ if(data["document"])
         </div>
 
 
-        <div className="flex  gap-48">
-          <div className="border-4 border-border">
-          <img src={document['Image1']}></img>
+        <div className="flex gap-48 items-center justify-between">
+          <div className="border-4 border-border w-fit h-fit">
+            <img src={document['Image1']}></img>
           </div> 
 
-          <div className="border-4 border-border">
-          <img src={document['Image2']}></img>
+          <div className="border-4 border-border w-fit h-fit">
+            <img src={document['Image2']}></img>
           </div>
         </div>
 
@@ -139,3 +136,9 @@ if(data["document"])
 }
 }
 
+
+
+
+//implementation excellence  - diagrams thoughts 
+
+//cost effectiveness 

@@ -8,6 +8,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { UserContext } from "../../UserContext";
 import { VITE_API_URL } from "../../setupEnv";
+import { useToast } from "../ui/use-toast"
 
 
 
@@ -51,6 +52,7 @@ const Links = () => {
   const [open, setOpen] = useState(false);
   const {user,setUser} = useContext(UserContext);
   const navigate=useNavigate();
+  const { toast } = useToast()
 
 // logout func begins
   const [redirect,setRedirect]=useState('');
@@ -59,6 +61,15 @@ const Links = () => {
       await axios.post(`${VITE_API_URL}/logout`, {}, { withCredentials: true });
       setRedirect('/');
       setUser(null);
+      toast({
+        variant:"destructive",
+        title: "Logout ",
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md  p-4">
+           You have been succesfully logged out.
+          </pre>
+        ),  
+      })
     } catch (error) {
       console.error("Error during logout:", error);
     }

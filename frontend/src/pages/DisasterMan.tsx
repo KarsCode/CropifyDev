@@ -37,7 +37,7 @@ export default function DisasterMan() {
               Pest Detection           
           </h1>
 
-          <div className='lg:block md:block flex items-center'>
+          <div className='lg:block md:block'>
             <p className='text-lg'>
             Our image-based pest detection algorithm is a critical tool for farmers, employing advanced image recognition technology to identify and alert against potential pest infestations in agriculture. By analyzing images, this algorithm swiftly detects visual cues indicative of infestations. This enables farmers to take rapid and targeted actions.
             </p>
