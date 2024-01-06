@@ -4,7 +4,7 @@ import { Cell, RadarChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, Ar
 
 interface Data {
   name: string;
-  pv: number;
+  price: number;
   amt: number;
 }
 
@@ -23,73 +23,80 @@ interface ChartData {
 }
 
 const YourComponent: React.FC = () => {
-  const [selectedData, setSelectedData] = useState<string>('data1'); // Initial selected data
+  const [selectedData1, setSelectedData1] = useState<string>('data1'); // Initial selected data for first dropdown
+  const [selectedData2, setSelectedData2] = useState<string>('data01'); // Initial selected data for second dropdown
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedData(e.target.value); // Update selected data on dropdown change
+
+  const handleSelectChange1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedData1(e.target.value); // Update selected data on dropdown change
   };
+
+  const handleSelectChange2 = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedData2(e.target.value); // Update selected data for second dropdown
+  };
+
 
   
 
   const datal1: Data[] = [
     {
       name: 'Jan',
-      pv: 1200,
+      price: 1200,
       amt: 2000,
     },
     {
       name: 'Feb',
-      pv: 1100,
+      price: 1100,
       amt: 2400,
     },
     {
       name: 'March',
-      pv: 800,
+      price: 800,
       amt: 2210,
     },
     {
       name: 'Apr',
-      pv: 600,
+      price: 600,
       amt: 2210,
     },
     {
       name: 'May',
-      pv: 1000,
+      price: 1000,
       amt: 2290,
     },
     {
       name: 'June',
-      pv: 1280,
+      price: 1280,
       amt: 2290,
     },
     {
       name: 'July',
-      pv: 1500,
+      price: 1500,
       amt: 2000,
     },
     {
       name: 'Aug',
-      pv: 1100,
+      price: 1100,
       amt: 2000,
     },
     {
       name: 'Sep',
-      pv: 1100,
+      price: 1100,
       amt: 2000,
     },
     {
       name: 'Oct',
-      pv: 700,
+      price: 700,
       amt: 2181,
     },
     {
       name: 'Nov',
-      pv: 800,
+      price: 800,
       amt: 2500,
     },
     {
       name: 'Dec',
-      pv: 900,
+      price: 900,
       amt: 2100,
     },
   ];
@@ -97,62 +104,62 @@ const YourComponent: React.FC = () => {
   const datal2: Data[] = [
     {
       name: 'Jan',
-      pv: 1200,
+      price: 1200,
       amt: 2000,
     },
     {
       name: 'Feb',
-      pv: 1600,
+      price: 1600,
       amt: 2400,
     },
     {
       name: 'March',
-      pv: 1998,
+      price: 1998,
       amt: 2210,
     },
     {
       name: 'Apr',
-      pv: 2098,
+      price: 2098,
       amt: 2210,
     },
     {
       name: 'May',
-      pv: 1000,
+      price: 1000,
       amt: 2290,
     },
     {
       name: 'June',
-      pv: 2050,
+      price: 2050,
       amt: 2290,
     },
     {
       name: 'July',
-      pv: 1500,
+      price: 1500,
       amt: 2000,
     },
     {
       name: 'Aug',
-      pv: 1100,
+      price: 1100,
       amt: 2000,
     },
     {
       name: 'Sep',
-      pv: 1100,
+      price: 1100,
       amt: 2000,
     },
     {
       name: 'Oct',
-      pv: 700,
+      price: 700,
       amt: 2181,
     },
     {
       name: 'Nov',
-      pv: 800,
+      price: 800,
       amt: 2500,
     },
     {
       name: 'Dec',
-      pv: 900,
+      price: 900,
       amt: 2100,
     },
   ];
@@ -160,62 +167,62 @@ const YourComponent: React.FC = () => {
   const datal3: Data[] = [
     {
       name: 'Jan',
-      pv: 200,
+      price: 200,
       amt: 2000,
     },
     {
       name: 'Feb',
-      pv: 600,
+      price: 600,
       amt: 2400,
     },
     {
       name: 'March',
-      pv: 998,
+      price: 998,
       amt: 2210,
     },
     {
       name: 'Apr',
-      pv: 1098,
+      price: 1098,
       amt: 2210,
     },
     {
       name: 'May',
-      pv: 1080,
+      price: 1080,
       amt: 2290,
     },
     {
       name: 'June',
-      pv: 1500,
+      price: 1500,
       amt: 2290,
     },
     {
       name: 'July',
-      pv: 1500,
+      price: 1500,
       amt: 2000,
     },
     {
       name: 'Aug',
-      pv: 1500,
+      price: 1500,
       amt: 2000,
     },
     {
       name: 'Sep',
-      pv: 1200,
+      price: 1200,
       amt: 2000,
     },
     {
       name: 'Oct',
-      pv: 900,
+      price: 900,
       amt: 2181,
     },
     {
       name: 'Nov',
-      pv: 600,
+      price: 600,
       amt: 2500,
     },
     {
       name: 'Dec',
-      pv: 900,
+      price: 900,
       amt: 2100,
     },
   ];
@@ -223,62 +230,62 @@ const YourComponent: React.FC = () => {
   const datal4: Data[] = [
     {
       name: 'Jan',
-      pv: 1200,
+      price: 1200,
       amt: 2000,
     },
     {
       name: 'Feb',
-      pv: 1600,
+      price: 1600,
       amt: 2400,
     },
     {
       name: 'March',
-      pv: 1998,
+      price: 1998,
       amt: 2210,
     },
     {
       name: 'Apr',
-      pv: 2098,
+      price: 2098,
       amt: 2210,
     },
     {
       name: 'May',
-      pv: 1000,
+      price: 1000,
       amt: 2290,
     },
     {
       name: 'June',
-      pv: 2050,
+      price: 2050,
       amt: 2290,
     },
     {
       name: 'July',
-      pv: 1500,
+      price: 1500,
       amt: 2000,
     },
     {
       name: 'Aug',
-      pv: 1100,
+      price: 1100,
       amt: 2000,
     },
     {
       name: 'Sep',
-      pv: 1100,
+      price: 1100,
       amt: 2000,
     },
     {
       name: 'Oct',
-      pv: 700,
+      price: 700,
       amt: 2181,
     },
     {
       name: 'Nov',
-      pv: 800,
+      price: 800,
       amt: 2500,
     },
     {
       name: 'Dec',
-      pv: 900,
+      price: 900,
       amt: 2100,
     },
   ];
@@ -286,62 +293,62 @@ const YourComponent: React.FC = () => {
   const datal5: Data[] = [
     {
       name: 'Jan',
-      pv: 1150,
+      price: 1150,
       amt: 2100,
     },
     {
       name: 'Feb',
-      pv: 1550,
+      price: 1550,
       amt: 2350,
     },
     {
       name: 'March',
-      pv: 1980,
+      price: 1980,
       amt: 2250,
     },
     {
       name: 'Apr',
-      pv: 2080,
+      price: 2080,
       amt: 2250,
     },
     {
       name: 'May',
-      pv: 950,
+      price: 950,
       amt: 2360,
     },
     {
       name: 'June',
-      pv: 2010,
+      price: 2010,
       amt: 2320,
     },
     {
       name: 'July',
-      pv: 1480,
+      price: 1480,
       amt: 1920,
     },
     {
       name: 'Aug',
-      pv: 1120,
+      price: 1120,
       amt: 2020,
     },
     {
       name: 'Sep',
-      pv: 1080,
+      price: 1080,
       amt: 1980,
     },
     {
       name: 'Oct',
-      pv: 720,
+      price: 720,
       amt: 2150,
     },
     {
       name: 'Nov',
-      pv: 850,
+      price: 850,
       amt: 2450,
     },
     {
       name: 'Dec',
-      pv: 920,
+      price: 920,
       amt: 2050,
     },
   ];
@@ -474,18 +481,18 @@ const YourComponent: React.FC = () => {
   ];
   
   let selectedChartData: Data[] = [];
-  if (selectedData === 'data1') {
+  if (selectedData1 === 'data1') {
     selectedChartData = datal1;
-  } else if (selectedData === 'data2') {
+  } else if (selectedData1 === 'data2') {
     selectedChartData = datal2;
   }
-  else if (selectedData === 'data3') {
+  else if (selectedData1 === 'data3') {
     selectedChartData = datal3;
   }
-  else if (selectedData === 'data4') {
+  else if (selectedData1 === 'data4') {
     selectedChartData = datal4;
   }
-  else if (selectedData === 'data5') {
+  else if (selectedData1 === 'data5') {
     selectedChartData = datal5;
   }
   else {
@@ -493,18 +500,18 @@ const YourComponent: React.FC = () => {
   }
 
   let selectedChartData2: Data2[] = [];
-  if (selectedData === 'data01') {
+  if (selectedData2 === 'data01') {
     selectedChartData2 = datap1;
-  } else if (selectedData === 'data02') {
+  } else if (selectedData2 === 'data02') {
     selectedChartData2 = datap2;
   }
-  else if (selectedData === 'data03') {
+  else if (selectedData2 === 'data03') {
     selectedChartData2 = datap3;
   }
-  else if (selectedData === 'data04') {
+  else if (selectedData2 === 'data04') {
     selectedChartData2 = datap4;
   }
-  else if (selectedData === 'data05') {
+  else if (selectedData2 === 'data05') {
     selectedChartData2 = datap5;
   }
  else {
@@ -530,7 +537,7 @@ const YourComponent: React.FC = () => {
                   <stop offset="5%" stopColor="#8884d8" stopOpacity={0.9} />
                   <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
                 </linearGradient>
-                <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="colorprice" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.9} />
                   <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
                 </linearGradient>
@@ -539,11 +546,11 @@ const YourComponent: React.FC = () => {
               <YAxis />
               <CartesianGrid strokeDasharray="3 3" />
               <Tooltip />
-              <Area type="monotone" dataKey="pv" stroke="#8884d8" fillOpacity={1} fill="url(#colorPv)" />
+              <Area type="monotone" dataKey="price" stroke="#8884d8" fillOpacity={1} fill="url(#colorprice)" />
             </AreaChart>
           </ResponsiveContainer>
           <div className='pt-5'>
-          <select className="select-box" value={selectedData} onChange={handleSelectChange}>
+          <select className="select-box" value={selectedData1} onChange={handleSelectChange1}>
           <option value="data1">Tomato</option>
           <option value="data2">Potato</option>
           <option value="data3">Carrot</option>
@@ -570,7 +577,7 @@ const YourComponent: React.FC = () => {
             </PieChart>
           </ResponsiveContainer>
         <div className=''>
-          <select className="select-box" value={selectedData} onChange={handleSelectChange}>
+          <select className="select-box" value={selectedData2} onChange={handleSelectChange2}>
           <option value="data01">Alluvial</option>
           <option value="data02">Clayey</option>
           <option value="data03">Laterite</option>
