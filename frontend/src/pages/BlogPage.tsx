@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PostCard from '../components/PostCard/PostCard'
 import { VITE_API_URL } from '../setupEnv';
-import { Button } from '../components/ui/button';
-import { ReloadIcon } from '@radix-ui/react-icons';
 import { MutatingDots } from 'react-loader-spinner';
 
 const BlogPage = () => {
@@ -34,10 +32,7 @@ const BlogPage = () => {
           image: string;
           blog_id:number;
       }
-
-      interface PostCardProps {
-        document: DocumentInterface;
-      }   
+ 
 
 
     if(!data){
