@@ -283,6 +283,69 @@ const YourComponent: React.FC = () => {
     },
   ];
 
+  const datal5: Data[] = [
+    {
+      name: 'Jan',
+      pv: 1150,
+      amt: 2100,
+    },
+    {
+      name: 'Feb',
+      pv: 1550,
+      amt: 2350,
+    },
+    {
+      name: 'March',
+      pv: 1980,
+      amt: 2250,
+    },
+    {
+      name: 'Apr',
+      pv: 2080,
+      amt: 2250,
+    },
+    {
+      name: 'May',
+      pv: 950,
+      amt: 2360,
+    },
+    {
+      name: 'June',
+      pv: 2010,
+      amt: 2320,
+    },
+    {
+      name: 'July',
+      pv: 1480,
+      amt: 1920,
+    },
+    {
+      name: 'Aug',
+      pv: 1120,
+      amt: 2020,
+    },
+    {
+      name: 'Sep',
+      pv: 1080,
+      amt: 1980,
+    },
+    {
+      name: 'Oct',
+      pv: 720,
+      amt: 2150,
+    },
+    {
+      name: 'Nov',
+      pv: 850,
+      amt: 2450,
+    },
+    {
+      name: 'Dec',
+      pv: 920,
+      amt: 2050,
+    },
+  ];
+
 
 
   const datap1: Data2[]= [
@@ -393,6 +456,23 @@ const YourComponent: React.FC = () => {
     },
   ];
 
+  
+
+  const datam = [
+    { name: 'Jan', corn: 1000, wheat: 850, rice: 1100, soybean: 950, barley: 1200 },
+    { name: 'Feb', corn: 1250, wheat: 800, rice: 1150, soybean: 1050, barley: 1300 },
+    { name: 'Mar', corn: 1050, wheat: 900, rice: 1180, soybean: 950, barley: 1120 },
+    { name: 'Apr', corn: 1350, wheat: 920, rice: 1050, soybean: 1000, barley: 1150 },
+    { name: 'May', corn: 1150, wheat: 1050, rice: 1200, soybean: 900, barley: 1100 },
+    { name: 'Jun', corn: 1100, wheat: 1000, rice: 1150, soybean: 1050, barley: 1050 },
+    { name: 'Jul', corn: 1050, wheat: 1100, rice: 1100, soybean: 950, barley: 1000 },
+    { name: 'Aug', corn: 950, wheat: 1150, rice: 1000, soybean: 900, barley: 950 },
+    { name: 'Sep', corn: 850, wheat: 1200, rice: 950, soybean: 850, barley: 900 },
+    { name: 'Oct', corn: 800, wheat: 1250, rice: 900, soybean: 800, barley: 850 },
+    { name: 'Nov', corn: 750, wheat: 1300, rice: 850, soybean: 750, barley: 800 },
+    { name: 'Dec', corn: 700, wheat: 1350, rice: 800, soybean: 700, barley: 750 },
+  ];
+  
   let selectedChartData: Data[] = [];
   if (selectedData === 'data1') {
     selectedChartData = datal1;
@@ -406,7 +486,7 @@ const YourComponent: React.FC = () => {
     selectedChartData = datal4;
   }
   else if (selectedData === 'data5') {
-    selectedChartData = datal1;
+    selectedChartData = datal5;
   }
   else {
     selectedChartData = datal1;
@@ -482,7 +562,7 @@ const YourComponent: React.FC = () => {
         </div>
           <ResponsiveContainer width="100%" height="80%">
             <PieChart width={400} height={200}>
-              <Pie data={selectedChartData2} dataKey="value" cx="50%" cy="50%" innerRadius={80} outerRadius={100} fill="#82ca9d" label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
+              <Pie data={selectedChartData2} dataKey="value" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
               {selectedChartData2.map((entry, index) => (
         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
@@ -500,13 +580,35 @@ const YourComponent: React.FC = () => {
         </select>
         </div>
         </div>
+        <div className="flex-1 flex flex-col items-center justify-center">
+          <div className='font-bold pb-5'>
+          Crop Production Rates
+        </div>
+        <ResponsiveContainer width="70%" height={400}>
+      <LineChart data={datam}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Line type="monotone" dataKey="corn" name="Corn" stroke="#8884d8" />
+        <Line type="monotone" dataKey="wheat" name="Wheat" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="rice" name="Rice" stroke="#ffc658" />
+        <Line type="monotone" dataKey="corn" name="Corn" stroke="#8884d8" />
+        <Line type="monotone" dataKey="wheat" name="Wheat" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="rice" name="Rice" stroke="#ffc658" />
+        <Line type="monotone" dataKey="soybean" name="Soybean" stroke="#ff7300" />
+        <Line type="monotone" dataKey="barley" name="Barley" stroke="#0088aa" />
+      </LineChart>
+    </ResponsiveContainer>
+    </div>
       </div>
 
       <div className="flex-1 flex flex-col sm:flex-row sm:gap-96">
         {/* Lower Left */}
         <div className="flex-1 flex flex-col items-center justify-center">
         <div className='font-bold pb-5 pt-20'>
-        Crop Health Graph
+        Crop Health Graph (graded out of 100)
         </div>
           <ResponsiveContainer width="100%" height="100%">
           <BarChart width={600} height={400} data={cropHealthData}>
