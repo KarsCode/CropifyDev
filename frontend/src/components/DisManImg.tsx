@@ -3,6 +3,7 @@ import { VITE_API_URL} from '../setupEnv.tsx';
 import { Input } from "../components/ui/input"
 import { Label } from "../components/ui/label"// Use this line wh
 import { Button } from './ui/button.tsx';
+import { useToast } from "./ui/use-toast"
 
 interface ImageProcessingProps {
   endpoint: string; // Prop to determine the dynamic part of the URL
@@ -10,6 +11,8 @@ interface ImageProcessingProps {
 
 const DisaManImg: React.FC<ImageProcessingProps> = ({ endpoint }) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const { toast } = useToast()
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     console.log("Test");
@@ -37,6 +40,36 @@ const DisaManImg: React.FC<ImageProcessingProps> = ({ endpoint }) => {
 
 
             console.log(detect);
+            if(detect === 1)
+            toast({
+              variant:"destructive",
+              title: "Your submission was succesfully recorded: ",
+              description: (
+                <pre className="mt-2 w-[340px] rounded-md p-4">
+                  Fire Detected.
+                </pre>
+              ),  
+            })
+
+            if(detect === 0)
+            toast({
+              title: "Your submission was succesfully recorded: ",
+              description: (
+                <pre className="mt-2 w-[340px] rounded-md bg-crophover p-4">
+                  No Fire Detected.
+                </pre>
+              ),  
+            })
+
+            if(typeof detect === "string")
+            toast({
+              title: "Your submission was succesfully recorded: ",
+              description: (
+                <pre className="mt-2 w-[340px] rounded-md p-4">
+                  {detect}
+                </pre>
+              ),  
+            })
 
 
 

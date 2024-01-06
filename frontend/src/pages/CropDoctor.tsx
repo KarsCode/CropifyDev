@@ -11,7 +11,7 @@ export default function CropDoctor(){
         <div className='flex flex-col gap-8 w-1/2'>
           
           <h1 className='text-7xl font-bold whitespace-wrap'>
-              Crop Doctor           
+              CropDoctor           
           </h1>
 
           <h2 className="text-4xl font-bold whitespace-wrap "> Prescribing Health To Your Harvest.</h2>

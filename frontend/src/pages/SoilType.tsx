@@ -60,7 +60,7 @@ if(data["document"]){
             <div>
         {/* <CarouselDisease image1={document['Image1']} image2={document['Image2']} history={document['history']} description={document['description']} medication={document['medication']} solutions={document['solutions']} title={document['disease_name']}/> */}
 
-        <div className="text-8xl font-bold pb-20">
+        <div className="text-7xl font-bold pb-20">
           {document['soil_type']} 
         </div>
 
@@ -83,7 +83,11 @@ if(data["document"]){
             <CardHeader> <h1 className="font-bold underline">Nutrient Content</h1> </CardHeader>
             <CardContent>
               <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+              {document['nutrient_content']['nitrogen']}
+              <br></br>
+              {document['nutrient_content']['phosphorus']}
+              <br />
+              {document['nutrient_content']['potassium']}
               </p>
 
             </CardContent>
