@@ -49,7 +49,7 @@ const BlogPage = () => {
         width="100"
         color="#4fa94d"
         secondaryColor="#4fa94d"
-        radius="12.5"
+        radius="9.5"
         ariaLabel="mutating-dots-loading"
         wrapperStyle={{}}
         wrapperClass=""
