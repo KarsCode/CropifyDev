@@ -7,6 +7,7 @@ import Markdown  from 'react-markdown'
 import { ReloadIcon } from '@radix-ui/react-icons';
 import { Button } from '../components/ui/button';
 import remarkGfm from 'remark-gfm'
+import { MutatingDots } from 'react-loader-spinner';
 
 
 const SingleBlogPost = () => {
@@ -71,11 +72,18 @@ const SingleBlogPost = () => {
   if(!data){
     return (
       <div className="mt-64 flex flex-col items-center justify-center">
-      <Button disabled className="bg-destructive">
-      <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-      Loading
-    </Button>
-    </div>
+      <MutatingDots
+        visible={true}
+        height="100"
+        width="100"
+        color="#4fa94d"
+        secondaryColor="#4fa94d"
+        radius="9.5"
+        ariaLabel="mutating-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        />
+        </div>
     );
   }
 

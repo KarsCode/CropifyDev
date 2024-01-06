@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ReloadIcon } from "@radix-ui/react-icons"
  
 import { Button } from "../components/ui/button"
+import { MutatingDots } from "react-loader-spinner";
 import {
   Card,
   CardContent,
@@ -40,11 +41,18 @@ export default function PlantDisease() {
 if (!data || !data["document"]) {
   return (
     <div className="mt-64 flex flex-col items-center justify-center">
-    <Button disabled className="bg-destructive">
-    <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-    Loading
-  </Button>
-  </div>
+      <MutatingDots
+        visible={true}
+        height="100"
+        width="100"
+        color="#4fa94d"
+        secondaryColor="#4fa94d"
+        radius="9.5"
+        ariaLabel="mutating-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        />
+        </div>
 
   );
 }
