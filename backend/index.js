@@ -22,7 +22,7 @@ const app=express();
 app.use(express.json({ limit: '10mb' }));
 app.use(
   cors({
-    origin: 'https://6599328d9ed589c17b61228b--stunning-halva-33d62f.netlify.app/', // Allow requests from any origin
+    origin: 'stunning-halva-33d62f.netlify.app', // Allow requests from any origin
     credentials: true,
   })
 );
