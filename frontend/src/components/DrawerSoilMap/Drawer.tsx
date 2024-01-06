@@ -12,10 +12,26 @@ import {
   DrawerTrigger,
 } from "../ui/drawer"
 import ChoroplethMap from "./MapComponent"
+// import soilInformation, {StateSoilInformation} from './soilInformation';
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
 
 
 
 export function DrawerDemo() {
+
+  const [drawerData, setDrawerData] = React.useState({
+    isoCode: '',
+    name: 'Title',
+    description: 'Description',
+  });
+
+  const handleModalStateChange = (isoCode: string, name: string, description: string) => {
+    setDrawerData({
+      isoCode,
+      name,
+      description,
+    });
+  };
  
 
   return (
@@ -32,11 +48,25 @@ export function DrawerDemo() {
             </div>
           </DrawerHeader>
 
-        {/* Map Render Here */}
+        <div className="flex gap-12 justify-end">
           <div className="w-[800px]">
-            <div></div>
-            <ChoroplethMap/>
+            
+          <ChoroplethMap onModalStateChange={handleModalStateChange} />
         
+          </div>
+
+          <div className="w-1/2 flex flex-col items-center justify-center">
+            <div className="w-2/3">
+            <Card>
+                <CardHeader>
+                  <CardTitle>{drawerData.name || 'Title'}</CardTitle>
+                  <CardDescription>{drawerData.description || 'Description'}</CardDescription>
+                </CardHeader>
+            </Card>
+            </div>
+
+          </div>
+
           </div>
 
 

@@ -18,8 +18,12 @@ interface ModalState {
   information: StateSoilInformation | null;
 }
 
+interface ChoroplethMapProps {
+  onModalStateChange: (isoCode: string, name: string, description: string) => void;
+}
 
-const ChoroplethMap: React.FC = () => {
+
+const ChoroplethMap: React.FC = ({ onModalStateChange }) => {
   const center: [number,number] = [20.5937, 78.9629];
   const [hoveredState, setHoveredState] = useState<string | null>(null);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
@@ -119,6 +123,7 @@ const ChoroplethMap: React.FC = () => {
     const information = soilInformation[isoCode];
     setModalIsOpen(true);
     setModalState({ isoCode, information });
+    onModalStateChange(isoCode, information?.name || 'Title', information?.description || 'Description');
     // Add logic to fetch and display state information based on isoCode
   };
 
@@ -132,7 +137,7 @@ const ChoroplethMap: React.FC = () => {
   return ( 
   <div>
 
-    
+    <div>
    <MapContainer style = {{ height: "600px",backgroundColor: "transparent"}} zoom ={4.52} center = {center} zoomControl = {false}
    scrollWheelZoom={false}  // Disable scroll wheel zoom
    doubleClickZoom={false}  // Disable double click zoom
@@ -148,22 +153,19 @@ const ChoroplethMap: React.FC = () => {
 
 
    </MapContainer>
+   </div>
 
+
+   {/* <div>     
    {modalState.isoCode && (
         <Card>
           <CardHeader>
             <CardTitle>{modalState.information?.name || 'Title'}</CardTitle>
             <CardDescription>{modalState.information?.description || 'Description'}</CardDescription>
           </CardHeader>
-          <CardContent>
-            {/* <p>{modalState.information?.content || 'Content'}</p> */}
-          </CardContent>
-          <CardFooter>
-            <p>Card Footer</p>
-          </CardFooter>
         </Card>
       )}
-
+  </div> */}
 
    </div>
   );
