@@ -435,8 +435,8 @@ const YourComponent: React.FC = () => {
 
 
   return (
-    <div className="h-screen py-0 flex flex-col pb-10">
-      <div className="flex-1 flex flex-col sm:flex-row">
+    <div className="h-screen py-0 flex flex-col pb-10 gap-12">
+      <div className="flex-1 flex flex-col sm:flex-row gap-5">
         
         {/* Upper Left */}
         <div className="flex-1 flex flex-col items-center justify-center">
