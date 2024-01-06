@@ -22,7 +22,7 @@ const app=express();
 app.use(express.json({ limit: '10mb' }));
 app.use(
   cors({
-    origin: 'http://localhost:5173', // Specify the exact origin of your frontend
+    origin: '*', // Allow requests from any origin
     credentials: true,
   })
 );
