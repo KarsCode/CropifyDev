@@ -13,6 +13,7 @@ import LoginPage from './pages/LoginPage';
 import BlogPage from './pages/BlogPage';
 import SingleBlogPost from './pages/SingleBlogPost';
 import { UserContextProvider } from './UserContext';
+import DisasterMan from './pages/DisasterMan';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home />} />
         <Route path="/CropDoctor" element={<CropDoctor/>} />
+        <Route path="/DisasterMan" element={<DisasterMan/>} />
         <Route path="/SoilCheck" element={<SoilCheck/>} />
         <Route path="/Blog" element={<BlogPage/>} />
         <Route path="/Blog/:id" element={<SingleBlogPost/>} />
