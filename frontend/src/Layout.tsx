@@ -10,6 +10,7 @@ export default function Layout() {
   //  const {user} = useContext(UserContext);
    //console.log(user);
   return (
+    <div className="fonts">
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="flex flex-col">
       <div className="navbar">
@@ -22,5 +23,6 @@ export default function Layout() {
       </div>
     <Toaster/>
     </ThemeProvider>
+    </div>
   );
 }
