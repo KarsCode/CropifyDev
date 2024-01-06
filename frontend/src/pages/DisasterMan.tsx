@@ -1,5 +1,4 @@
-import ImageProcessing from "../components/ImageProcessing";
-
+import DisaManImg from "../components/DisManImg";
 export default function DisasterMan() {
 
    
@@ -24,7 +23,7 @@ export default function DisasterMan() {
 
 
           <div className='hidden lg:flex relative w-1/2 mb-24  items-center justify-center font-bold'>
-          <div ><ImageProcessing endpoint="plantDisease"/></div>
+          <div ><DisaManImg endpoint="fireDetect"/></div>
           
         </div>
 
@@ -45,7 +44,7 @@ export default function DisasterMan() {
 
 
           <div className='hidden lg:flex relative w-1/2 mb-24  items-center justify-center font-bold'>
-          <div ><ImageProcessing endpoint="plantDisease"/></div>
+          <div ><DisaManImg endpoint="pestDetect"/></div>
           
         </div>
 

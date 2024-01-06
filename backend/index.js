@@ -4,6 +4,9 @@ import cors from "cors";
 import plantRoute from './routes/plantRoute.js'
 import soilRoute from './routes/soilRoute.js'
 import blogRoute from './routes/blogRoute.js'
+import fireRoute from './routes/fireRoute.js'
+import pestRoute from './routes/pestRoute.js'
+
 import UserModel from "./models/User.js";
 import bcrypt from   'bcrypt';
 import mongoose from 'mongoose';
@@ -35,6 +38,8 @@ mongoose.connect(process.env.DATABASE_URL+"/Cropify");
 app.use('/plantDisease',plantRoute);
 app.use('/soilType',soilRoute);
 app.use('/Blogs',blogRoute);
+app.use('/fireDetect',fireRoute);
+app.use('/pestDetect',pestRoute);
 
 
 app.post('/register', async (req, res) => {
