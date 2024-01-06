@@ -20,7 +20,7 @@ interface PostCardProps {
 const PostCard: React.FC<PostCardProps> = ( {document} ) => {
   const link = "/Blog/"+document.blog_id.toString();
   return (
-    <div className='flex flex-col gap-10 mb-5'>
+    <div className='flex flex-col gap-10 mb-5 justify-between'>
       <div className='flex relative'>
         <div className='w-[90%] relative'>
           <img src={document.image} style={{ objectFit: 'cover' }} alt='Blog Post' />

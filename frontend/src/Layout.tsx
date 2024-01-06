@@ -11,6 +11,7 @@ export default function Layout() {
    //console.log(user);
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <div className="flex flex-col">
       <div className="navbar">
       <Navbar/>
       </div>
@@ -18,6 +19,7 @@ export default function Layout() {
       <Outlet />
       </div>
       <Footer/>
+      </div>
     <Toaster/>
     </ThemeProvider>
   );

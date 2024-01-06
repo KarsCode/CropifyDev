@@ -54,7 +54,7 @@ const BlogPage = () => {
                 <div className='flex flex-wrap pt-5'>
                     {data &&
                         data.map((document:DocumentInterface, index:number) => (
-                            <div key={index} className='sm:w-[45%] md:w-[30%] lg:w-[30%] xl:w-[30%]'>
+                            <div key={index} className='flex flex-col justify-between sm:w-[45%] md:w-[30%] lg:w-[30%] xl:w-[30%]'>
                                 <PostCard document={document} />
                             </div>
                         ))}

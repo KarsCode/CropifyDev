@@ -435,8 +435,8 @@ const YourComponent: React.FC = () => {
 
 
   return (
-    <div className="h-screen py-0 flex flex-col">
-      <div className="flex-1 flex flex-row">
+    <div className="h-screen py-0 flex flex-col pb-10">
+      <div className="flex-1 flex flex-col sm:flex-row">
         
         {/* Upper Left */}
         <div className="flex-1 flex flex-col items-center justify-center">
@@ -502,7 +502,7 @@ const YourComponent: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-row">
+      <div className="flex-1 flex flex-col sm:flex-row sm:gap-96">
         {/* Lower Left */}
         <div className="flex-1 flex flex-col items-center justify-center">
         <div className='font-bold pb-5 pt-20'>

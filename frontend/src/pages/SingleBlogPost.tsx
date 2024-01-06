@@ -6,11 +6,27 @@ import { VITE_API_URL } from '../setupEnv';
 import Markdown  from 'react-markdown'
 import { ReloadIcon } from '@radix-ui/react-icons';
 import { Button } from '../components/ui/button';
+import remarkGfm from 'remark-gfm'
 
 
 const SingleBlogPost = () => {
   const { id } = useParams();
   const [data, setData] = useState<DocumentInterface|null>(null);
+
+//   const markdown = `A paragraph with *emphasis* and **strong importance**.
+
+// > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+
+// * Lists
+// * [ ] todo
+// * [x] done
+
+// A table:
+
+// | a | b |
+// | - | - |
+// `
+
 
   interface DocumentInterface {
     title: string;
@@ -95,7 +111,9 @@ const SingleBlogPost = () => {
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nostrum architecto eum saepe, debitis dolores magnam neque exercitationem ad earum maxime nobis, maiores, asperiores esse natus ipsa doloremque iusto voluptate!Lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, temporibus explicabo, eaque atque a odio placeat ratione sit molestias minus quo amet assumenda quibusdam eum ut libero quas sed error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur quam necessitatibus id fuga odit doloribus adipisci iusto facere accusamus! Architecto, quam sunt impedit iure id recusandae odio reprehenderit dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur aliquid illo nisi voluptatem corrupti! A, doloremque sit consequuntur eos odit, numquam ad porro ipsum minus nobis eaque adipisci, amet quos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, nesciunt! Sequi aut natus vero sunt accusantium quas modi sint doloribus distinctio, cum voluptas omnis molestias, hic, autem corporis ipsam laudantium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quasi molestiae aut nulla quae! Ipsam, distinctio? Esse quia quas eius neque? A possimus numquam atque quibusdam, nam quasi dolores. Ullam.
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nostrum architecto eum saepe, debitis dolores magnam neque exercitationem ad earum maxime nobis, maiores, asperiores esse natus ipsa doloremque iusto voluptate!Lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, temporibus explicabo, eaque atque a odio placeat ratione sit molestias minus quo amet assumenda quibusdam eum ut libero quas sed error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur quam necessitatibus id fuga odit doloribus adipisci iusto facere accusamus! Architecto, quam sunt impedit iure id recusandae odio reprehenderit dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur aliquid illo nisi voluptatem corrupti! A, doloremque sit consequuntur eos odit, numquam ad porro ipsum minus nobis eaque adipisci, amet quos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, nesciunt! Sequi aut natus vero sunt accusantium quas modi sint doloribus distinctio, cum voluptas omnis molestias, hic, autem corporis ipsam laudantium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quasi molestiae aut nulla quae! Ipsam, distinctio? Esse quia quas eius neque? A possimus numquam atque quibusdam, nam quasi dolores. Ullam. */}
   
-              <Markdown>{content}</Markdown>
+               
+                <Markdown remarkPlugins={[remarkGfm]}>{content}</Markdown>
+              
             </ScrollArea>
           </div>
   
