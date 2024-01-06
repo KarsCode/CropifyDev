@@ -87,8 +87,8 @@ app.post('/register', async (req, res) => {
     }
   });
 
-  app.post('/logout',async (req,res) => {
-    res.cookie('token','').json(true);
+  app.post('/logout', (req,res) => {
+    res.cookie('token', '', { path: '/', secure: true, sameSite: 'None' }).json(true);
   });
 
 
