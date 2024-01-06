@@ -1,9 +1,7 @@
 import { useParams } from "react-router-dom";
 import { VITE_API_URL } from "../setupEnv";
 import { useEffect, useState } from "react";
-import { ReloadIcon } from "@radix-ui/react-icons"
 import {MutatingDots} from 'react-loader-spinner'
-import { Button } from "../components/ui/button"
 import {
   Card,
   CardContent,

@@ -23,6 +23,10 @@ const links = [
     path: "/SoilCheck",
   },
   {
+    title:"DisasterMan",
+    path:"/DisasterMan"
+  },
+  {
     title: "Blog",
     path: "/Blog",
   },
