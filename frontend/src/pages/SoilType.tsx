@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { VITE_API_URL } from "../setupEnv";
 import { useEffect, useState } from "react";
 import { ReloadIcon } from "@radix-ui/react-icons"
- 
+import {MutatingDots} from 'react-loader-spinner'
 import { Button } from "../components/ui/button"
 import {
   Card,
@@ -38,10 +38,19 @@ export default function SoilType() {
 if (!data || !data["document"]) {
   
     return (
-      <Button disabled>
-      <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-      Please wait
-    </Button>
+      <div className="mt-64 flex flex-col items-center justify-center">
+      <MutatingDots
+        visible={true}
+        height="100"
+        width="100"
+        color="#4fa94d"
+        secondaryColor="#4fa94d"
+        radius="12.5"
+        ariaLabel="mutating-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        />
+        </div>
     )
   }
 
