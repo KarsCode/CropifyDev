@@ -22,7 +22,7 @@ export default function CropDoctor(){
 
           <div className='lg:block md:block hidden'>
             <p className='text-lg'>
-              The CropDoctor serves as your vigilant plant health companion, identifying diseases swiftly to safeguard your harvest and ensure bountiful yields. It combines advanced machine learning with image detection to empower farmers with real-time insights, cultivating a healthier, more prosperous future for agriculture.
+              CropDoctor serves as your vigilant plant health companion, identifying diseases swiftly to safeguard your harvest and ensure bountiful yields. With the help of AI enabled computer vision algorithms, CropDoctor empowers farmers with real-time insights, cultivating a healthier, more prosperous future for agriculture.
             </p>
           </div>
           <div className='lg:hidden md:hidden block'>
