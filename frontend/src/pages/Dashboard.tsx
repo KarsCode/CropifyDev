@@ -447,11 +447,11 @@ const YourComponent: React.FC = () => {
             <AreaChart width={630} height={300} data={selectedChartData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
               <defs>
                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
+                  <stop offset="5%" stopColor="#8884d8" stopOpacity={0.9} />
                   <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
+                  <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.9} />
                   <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
                 </linearGradient>
               </defs>
@@ -519,7 +519,7 @@ const YourComponent: React.FC = () => {
       <Bar dataKey="diseaseResistance" stackId="a" fill="#82ca9d" name="Disease Resistance" />
       <Bar dataKey="climateTolerance" stackId="a" fill="#ffc658" name="Climate Tolerance" />
       <Bar dataKey="nutrientUptake" stackId="a" fill="#ff7300" name="Nutrient Uptake" />
-      <Bar dataKey="growthVigor" stackId="a" fill="#FF0000" name="Growth Vigor" />
+      <Bar dataKey="growthVigor" stackId="a" fill="#de522f" name="Growth Vigor" />
     </BarChart>
           </ResponsiveContainer>
         </div>
