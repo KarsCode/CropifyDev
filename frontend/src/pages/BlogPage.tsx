@@ -64,7 +64,7 @@ const BlogPage = () => {
         return (
             <div>
                 <div className='pb-5 text-6xl font-bold text-center'>The Future of Farming. </div>
-                <div className='flex flex-wrap pt-5'>
+                <div className='flex flex-wrap pt-10 justify-around'>
                     {data &&
                         data.map((document:DocumentInterface, index:number) => (
                             <div key={index} className='flex flex-col justify-between sm:w-[45%] md:w-[30%] lg:w-[30%] xl:w-[30%]'>
