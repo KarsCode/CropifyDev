@@ -3,6 +3,7 @@ import PostCard from '../components/PostCard/PostCard'
 import { VITE_API_URL } from '../setupEnv';
 import { Button } from '../components/ui/button';
 import { ReloadIcon } from '@radix-ui/react-icons';
+import { MutatingDots } from 'react-loader-spinner';
 
 const BlogPage = () => {
     const [data, setData] = useState<DocumentInterface[]|null>(null);
@@ -34,14 +35,26 @@ const BlogPage = () => {
           blog_id:number;
       }
 
+      interface PostCardProps {
+        document: DocumentInterface;
+      }   
+
 
     if(!data){
         return (
           <div className="mt-64 flex flex-col items-center justify-center">
-          <Button disabled className="bg-destructive">
-          <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-          Loading
-        </Button>
+          <MutatingDots
+        visible={true}
+        height="100"
+        width="100"
+        color="#4fa94d"
+        secondaryColor="#4fa94d"
+        radius="12.5"
+        ariaLabel="mutating-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        />
+
         </div>
         );
       }
