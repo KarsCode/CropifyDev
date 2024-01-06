@@ -67,7 +67,7 @@ if(data["document"])
         {/* <CarouselDisease image1={document['Image1']} image2={document['Image2']} history={document['history']} description={document['description']} medication={document['medication']} solutions={document['solutions']} title={document['disease_name']}/> */}
 
         <div className="text-8xl font-bold pb-20">
-          Plant Disease 
+          {document['disease_name']}
         </div>
 
         <div className="flex flex-col gap-10 items-center ">
@@ -77,7 +77,7 @@ if(data["document"])
             <CardHeader> <h1 className="font-bold underline">Description</h1> </CardHeader>
             <CardContent>
               <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+                {document['description']}
               </p>
 
             </CardContent>
@@ -88,8 +88,8 @@ if(data["document"])
           <Card className="hover:bg-crophover">
             <CardHeader> <h1 className="font-bold underline">History</h1> </CardHeader>
             <CardContent>
-              <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+            <p>
+                {document['history']}
               </p>
 
             </CardContent>
@@ -100,8 +100,8 @@ if(data["document"])
           <Card className="hover:bg-crophover">
             <CardHeader> <h1 className="font-bold underline">Medication</h1> </CardHeader>
             <CardContent>
-              <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+            <p>
+                {document['medication']}
               </p>
 
             </CardContent>
@@ -113,7 +113,7 @@ if(data["document"])
             <CardHeader> <h1 className="font-bold underline">Solution</h1> </CardHeader>
             <CardContent>
               <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+                {document['solutions']}
               </p>
 
             </CardContent>
@@ -123,11 +123,11 @@ if(data["document"])
 
         <div className="flex  gap-48">
           <div className="border-4 border-border">
-            Image 1 Here
+          <img src={document['Image1']}></img>
           </div> 
 
           <div className="border-4 border-border">
-            Image 2 Here
+          <img src={document['Image2']}></img>
           </div>
         </div>
 
