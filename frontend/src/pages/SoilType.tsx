@@ -54,7 +54,7 @@ if(data["document"]){
         {/* <CarouselDisease image1={document['Image1']} image2={document['Image2']} history={document['history']} description={document['description']} medication={document['medication']} solutions={document['solutions']} title={document['disease_name']}/> */}
 
         <div className="text-8xl font-bold pb-20">
-          Soil Type 
+          {document['soil_type']} 
         </div>
 
         <div className="flex flex-col gap-10 items-center ">
@@ -64,7 +64,7 @@ if(data["document"]){
             <CardHeader> <h1 className="font-bold underline">Key Characteristics</h1> </CardHeader>
             <CardContent>
               <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+              {document['key_characteristics']}
               </p>
 
             </CardContent>
@@ -88,7 +88,7 @@ if(data["document"]){
             <CardHeader> <h1 className="font-bold underline">Water Retention</h1> </CardHeader>
             <CardContent>
               <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+                {document['water_retention']}
               </p>
 
             </CardContent>
@@ -100,7 +100,7 @@ if(data["document"]){
             <CardHeader> <h1 className="font-bold underline">Common Crops</h1> </CardHeader>
             <CardContent>
               <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+                {document['common_crops']}
               </p>
 
             </CardContent>
@@ -111,8 +111,8 @@ if(data["document"]){
           <Card className="hover:bg-crophover">
             <CardHeader> <h1 className="font-bold underline">Health Tips</h1> </CardHeader>
             <CardContent>
-              <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+            <p>
+                {document['soil_health_tips']}
               </p>
 
             </CardContent>
@@ -124,7 +124,7 @@ if(data["document"]){
             <CardHeader> <h1 className="font-bold underline">Environmental Impact</h1> </CardHeader>
             <CardContent>
               <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+                {document['environmental_impact']}
               </p>
 
             </CardContent>
@@ -137,7 +137,7 @@ if(data["document"]){
             <CardHeader> <h1 className="font-bold underline">CLimate Considerations</h1> </CardHeader>
             <CardContent>
               <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed nulla natus fugit esse accusamus, tempora at corrupti sapiente voluptates, nisi soluta harum vero aliquam minus autem ex fuga aperiam.
+                {document['local_climate_considerations']}
               </p>
 
             </CardContent>
@@ -147,11 +147,11 @@ if(data["document"]){
 
         <div className="flex  gap-48">
           <div className="border-4 border-border">
-            Image 1 Here
+            <img src={document['Image1']}></img>
           </div> 
 
           <div className="border-4 border-border">
-            Image 2 Here
+            <img src={document['Image2']}></img>
           </div>
         </div>
 
