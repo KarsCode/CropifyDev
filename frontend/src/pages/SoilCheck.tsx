@@ -1,4 +1,3 @@
-import { DrawerDemo } from "../components/DrawerSoilMap/Drawer";
 import ImageProcessing from "../components/ImageProcessing";
 
 export default function CropDoctor(){
@@ -37,7 +36,6 @@ Cultivating Wealth From the Ground Up.</h2>
             
             
           <div className="hidden lg:block md:block">
-            <DrawerDemo/>
           </div>
           
           </div>
